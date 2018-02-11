@@ -14,10 +14,6 @@
 		8185A47C202EF3A500EAB43F /* ClickLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185A47B202EF3A500EAB43F /* ClickLabel.swift */; };
 		819946DE2030337500A5CB89 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 819946DD2030337500A5CB89 /* 123.png */; };
 		8199472B2030408400A5CB89 /* BannerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199472A2030408400A5CB89 /* BannerScrollView.swift */; };
-		81A5B0B020301FF100F65FD1 /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A5B0AC20301FF100F65FD1 /* WRCycleCell.swift */; };
-		81A5B0B120301FF100F65FD1 /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A5B0AD20301FF100F65FD1 /* WRCycleScrollView.swift */; };
-		81A5B0B220301FF100F65FD1 /* WRPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A5B0AE20301FF100F65FD1 /* WRPageControl.swift */; };
-		81A5B0B320301FF100F65FD1 /* WRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A5B0AF20301FF100F65FD1 /* WRProxy.swift */; };
 		81A5B0B52030237100F65FD1 /* main-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0B42030237100F65FD1 /* main-banner.png */; };
 		81A5B0B72030288F00F65FD1 /* 个人中心-背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0B62030288E00F65FD1 /* 个人中心-背景.png */; };
 		81A5B0BB2030290C00F65FD1 /* startImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0BA2030290B00F65FD1 /* startImage.png */; };
@@ -97,6 +93,9 @@
 		81B1AE8F202AA734001BB38F /* NetworkHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1AE8E202AA734001BB38F /* NetworkHelp.swift */; };
 		81B1AE95202AAB28001BB38F /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1AE94202AAB28001BB38F /* BaseModel.swift */; };
 		81B1AE97202AABE7001BB38F /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1AE96202AABE7001BB38F /* DataResult.swift */; };
+		F55E8FD420309BA000EB2B91 /* SQAutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E8FD120309BA000EB2B91 /* SQAutoScrollView.swift */; };
+		F55E8FD520309BA000EB2B91 /* SQDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E8FD220309BA000EB2B91 /* SQDotView.swift */; };
+		F55E8FD620309BA000EB2B91 /* SQPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E8FD320309BA000EB2B91 /* SQPageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,10 +107,6 @@
 		8185A47B202EF3A500EAB43F /* ClickLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickLabel.swift; sourceTree = "<group>"; };
 		819946DD2030337500A5CB89 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		8199472A2030408400A5CB89 /* BannerScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerScrollView.swift; sourceTree = "<group>"; };
-		81A5B0AC20301FF100F65FD1 /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
-		81A5B0AD20301FF100F65FD1 /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
-		81A5B0AE20301FF100F65FD1 /* WRPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRPageControl.swift; sourceTree = "<group>"; };
-		81A5B0AF20301FF100F65FD1 /* WRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRProxy.swift; sourceTree = "<group>"; };
 		81A5B0B42030237100F65FD1 /* main-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-banner.png"; sourceTree = "<group>"; };
 		81A5B0B62030288E00F65FD1 /* 个人中心-背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心-背景.png"; sourceTree = "<group>"; };
 		81A5B0BA2030290B00F65FD1 /* startImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startImage.png; sourceTree = "<group>"; };
@@ -201,6 +196,9 @@
 		81B1AE96202AABE7001BB38F /* DataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResult.swift; sourceTree = "<group>"; };
 		A5CB321A29195DFC7FBF2362 /* Pods_GYLJR_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYLJR_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1DB3E89E544015A4CBAF91 /* Pods-GYLJR-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYLJR-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYLJR-Swift/Pods-GYLJR-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		F55E8FD120309BA000EB2B91 /* SQAutoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQAutoScrollView.swift; sourceTree = "<group>"; };
+		F55E8FD220309BA000EB2B91 /* SQDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQDotView.swift; sourceTree = "<group>"; };
+		F55E8FD320309BA000EB2B91 /* SQPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQPageControl.swift; sourceTree = "<group>"; };
 		F89352B912570873B8C7C3DC /* Pods-GYLJR-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYLJR-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYLJR-Swift/Pods-GYLJR-Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,17 +224,6 @@
 				8199472A2030408400A5CB89 /* BannerScrollView.swift */,
 			);
 			path = CustomUI;
-			sourceTree = "<group>";
-		};
-		81A5B0AB20301FF100F65FD1 /* WRCycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				81A5B0AC20301FF100F65FD1 /* WRCycleCell.swift */,
-				81A5B0AD20301FF100F65FD1 /* WRCycleScrollView.swift */,
-				81A5B0AE20301FF100F65FD1 /* WRPageControl.swift */,
-				81A5B0AF20301FF100F65FD1 /* WRProxy.swift */,
-			);
-			path = WRCycleScrollView;
 			sourceTree = "<group>";
 		};
 		81A66637202C4C5000C8088A /* UserModel */ = {
@@ -360,7 +347,7 @@
 		81B0FC62202D313A00E1E73B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				81A5B0AB20301FF100F65FD1 /* WRCycleScrollView */,
+				F55E8FD020309BA000EB2B91 /* SQAutoScrollView */,
 				81B0FBFD202D2FFE00E1E73B /* SYTabbarController */,
 			);
 			path = Lib;
@@ -486,6 +473,17 @@
 				A5CB321A29195DFC7FBF2362 /* Pods_GYLJR_Swift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F55E8FD020309BA000EB2B91 /* SQAutoScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				F55E8FD120309BA000EB2B91 /* SQAutoScrollView.swift */,
+				F55E8FD220309BA000EB2B91 /* SQDotView.swift */,
+				F55E8FD320309BA000EB2B91 /* SQPageControl.swift */,
+			);
+			name = SQAutoScrollView;
+			path = "../../../../Downloads/SQAutoScrollView-master/SQAutoScrollView/SQAutoScrollView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -663,18 +661,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81A5B0B320301FF100F65FD1 /* WRProxy.swift in Sources */,
+				F55E8FD420309BA000EB2B91 /* SQAutoScrollView.swift in Sources */,
 				81B0FC79202D9E9D00E1E73B /* LoginViewController.swift in Sources */,
 				81B0FC08202D300E00E1E73B /* RootTabBarController.swift in Sources */,
 				81B1AE72202A8B7E001BB38F /* AppDelegate.swift in Sources */,
 				81B0FC7D202D9FEA00E1E73B /* BaseInfo.swift in Sources */,
+				F55E8FD520309BA000EB2B91 /* SQDotView.swift in Sources */,
 				81B0FC7B202D9EA900E1E73B /* RegisterViewController.swift in Sources */,
 				81A96448202E932A0034CC03 /* FuncConst.swift in Sources */,
 				81B0FC7F202DA00500E1E73B /* LoginInfo.swift in Sources */,
 				81B1AE97202AABE7001BB38F /* DataResult.swift in Sources */,
 				81B0FC03202D2FFE00E1E73B /* SYTabBarController.swift in Sources */,
-				81A5B0B220301FF100F65FD1 /* WRPageControl.swift in Sources */,
-				81A5B0B120301FF100F65FD1 /* WRCycleScrollView.swift in Sources */,
 				81B0FC64202D35E500E1E73B /* BaseViewController.swift in Sources */,
 				81B1AE89202A9364001BB38F /* HttpClient.swift in Sources */,
 				81B0FC68202D362200E1E73B /* MainViewController.swift in Sources */,
@@ -684,11 +681,11 @@
 				81A6663B202C4F5600C8088A /* ApiManager.swift in Sources */,
 				8185A47C202EF3A500EAB43F /* ClickLabel.swift in Sources */,
 				81B0FC84202DA54500E1E73B /* Tool.swift in Sources */,
-				81A5B0B020301FF100F65FD1 /* WRCycleCell.swift in Sources */,
 				81B0FC04202D2FFE00E1E73B /* SYTabBarItem.swift in Sources */,
 				81B0FC6A202D362D00E1E73B /* MineViewController.swift in Sources */,
 				81B0FC82202DA38600E1E73B /* ShiPei.swift in Sources */,
 				81B0FC02202D2FFE00E1E73B /* SYTabBar.swift in Sources */,
+				F55E8FD620309BA000EB2B91 /* SQPageControl.swift in Sources */,
 				81B1AE95202AAB28001BB38F /* BaseModel.swift in Sources */,
 				81A66639202C4C6C00C8088A /* UserModel.swift in Sources */,
 				81B1AE8D202A9D0B001BB38F /* Const.swift in Sources */,
@@ -836,6 +833,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "GYLJR-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sy.GYLJR-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -855,6 +853,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "GYLJR-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sy.GYLJR-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MainViewController: BaseViewController, WRCycleScrollViewDelegate {
+class MainViewController: BaseViewController
+{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-        navigationItem.hidesBackButton = true;
+        navigationController?.setNavigationBarHidden(true, animated: true)
         isHiddenTabBarWith(isHidden: false, isAnimated: false)
 //        setStatusBarStyle(statusBarStyle: UIStatusBarStyle.lightContent)
     }
@@ -30,26 +30,11 @@ class MainViewController: BaseViewController, WRCycleScrollViewDelegate {
                             "http://p.lrlz.com/data/upload/mobile/special/s303/s303_05442007388249407.png",
                             "http://p.lrlz.com/data/upload/mobile/special/s303/s303_05442007470310935.png"]
         
-        let bannerSV = BannerScrollView(frame: CGRect(x: 0, y: 0, width: 375, height: 100), placeHold:"")
-        bannerSV.backgroundColor = kGoldColor
-        view.addSubview(bannerSV)
+        let cycleView = SQAutoScrollView(frame: CGRect.init(x: 0, y: 0, width: view.bounds.size.width, height: 300), urls: serverImages, didItemCallBack: { (view, index) in
+            print("view--->\(view), index-->\(index)")
+        })
+        view.addSubview(cycleView)
         
     }
-    
-    @objc func click() {
-        jumpToRootViewBy(index: 1)
-    }
-
-    /// 点击图片事件
-    func cycleScrollViewDidSelect(at index:Int, cycleScrollView:WRCycleScrollView)
-    {
-        print("点击了第\(index+1)个图片")
-    }
-    /// 图片滚动事件
-    func cycleScrollViewDidScroll(to index:Int, cycleScrollView:WRCycleScrollView)
-    {
-        print("滚动到了第\(index+1)个图片")
-    }
-
 }
 

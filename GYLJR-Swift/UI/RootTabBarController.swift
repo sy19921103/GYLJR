@@ -19,7 +19,7 @@ class RootTabBarController: SYTabBarController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
-        get { return.lightContent}
+        get { return.default}
         
     }
     func customizeTabBar() {

@@ -22,8 +22,7 @@ class MineViewController: BaseViewController {
         
         super.viewWillAppear(animated)
         self.isHiddenTabBarWith(isHidden: false, isAnimated: false)
-
-        self.navigationItem.hidesBackButton = true;
+        self.navigationItem.leftBarButtonItem = nil;
     }
     
     override func viewDidLoad() {

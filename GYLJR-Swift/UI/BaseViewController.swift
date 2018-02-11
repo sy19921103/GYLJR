@@ -48,7 +48,6 @@ class BaseViewController: UIViewController {
         }else{
             navigationController?.navigationBar.setBackgroundImage(UIImage(named: "123"), for: UIBarMetrics.default)
         }
-        
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:kTextBlackColor,NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize:18)]
         edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
     }
