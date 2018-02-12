@@ -11,7 +11,6 @@ import UIKit
 class ClickTextView: UIView {
     
     static func createClickTextView(contentStr: String, clickStrArray: Array<String>, foregroundColor: UIColor, textColor: UIColor) -> UITextView {
-        print(clickStrArray)
         
         let contentAttrStr: NSMutableAttributedString = NSMutableAttributedString.init(string: contentStr)
         let paragraphStyle = NSMutableParagraphStyle()

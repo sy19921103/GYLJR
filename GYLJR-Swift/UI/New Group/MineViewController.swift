@@ -11,7 +11,9 @@ import UIKit
 class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView: BaseTableView!
+    var userLabel: UILabel!
     var sectionArray: Array<String> = ["账户总览","基本设置","贷前管理","贷后管理"]
+    var sectionStateArray: Array<String> = ["close","close","close","close"]
     let rowArray: Array<Array<String>?> = [nil,nil,["借款管理","新建借款申请"],["已放款未结清的借款","已结清的借款"]]
     
     
@@ -44,24 +46,52 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         tableView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreen_width, height:kScreen_Height-kTabBarHeight-kStatusBarHeight) , style: UITableViewStyle.grouped)
         tableView.delegate = self;
         tableView.dataSource = self
+        tableView.sectionFooterHeight = 0
         view.addSubview(tableView)
+        
+        generateHeaderView()
     }
     
     func generateHeaderView() {
         
+        let headerBgIV = UIImageView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 0, width: 375, height: 247))
+        headerBgIV.image = UIImage(named: "mine_headerBg")
+        headerBgIV.isUserInteractionEnabled = true
+        
+        let titleLabel = Tool.createLabelWith(title: "个人中心", textColor: kWhiteColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.center, isFitFont: true)
+        titleLabel.font = Tool.fitFontWith(font: 18, isBold: true)
+        titleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 0, y: 50, width: 375, height: 25)
+        headerBgIV.addSubview(titleLabel)
+        
+        userLabel = Tool.createLabelWith(title: "欢迎！<账户名>", textColor: kWhiteColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.center, isFitFont: true)
+        userLabel.frame = ShiPei.CCRectMakeScaleWith(x: 0, y: 130, width: 375, height: 20)
+        headerBgIV.addSubview(userLabel)
+        
+        let applyBtn = UIButton()
+        applyBtn.setBackgroundImage(UIImage(named: "mine_apply"), for: UIControlState.normal)
+        applyBtn.addTarget(self, action: #selector(applyMoneyClick), for: UIControlEvents.touchUpInside)
+        headerBgIV.addSubview(applyBtn)
+        applyBtn.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(35*kScreenScale)
+            make.bottom.equalToSuperview().offset(-40*kScreenScale)
+            make.width.equalTo(113*kScreenScale)
+        }
+    
+        tableView.tableHeaderView = headerBgIV
     }
     
+    @objc func applyMoneyClick() {
+        CLog("apply")
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let sectionView = tableView.headerView(forSection: section) as! MineHeaderFootView
-        
-        
-        if sectionView.isSelected {
-            if (sectionArray[section]["state"] == "open"){
+        if rowArray[section] != nil {
+            if sectionStateArray[section] != "close" {
                 return rowArray[section]!.count
-            }else{
-                return 0
             }
+            return 0
         }
         return 0
     }
@@ -74,13 +104,25 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let sectionId = "sectionId"
-        
         var headView = tableView.dequeueReusableHeaderFooterView(withIdentifier: sectionId) as? MineHeaderFootView
         if headView == nil {
             headView = MineHeaderFootView(reuseIdentifier: sectionId, title: sectionArray[section])
         }
-        headView?.showMoreBlock = {
-            tableView.reloadRows(at: , with: UITableViewRowAnimation.automatic)
+        if(rowArray[section] != nil){
+            if(sectionStateArray[section] == "close"){
+                headView?.isSelected = false
+            }else{
+                headView?.isSelected = true
+            }
+        }
+        headView?.index = section
+        headView?.showMoreBlock = { (index) in
+            if self.sectionStateArray[index] == "close"{
+                self.sectionStateArray[index] = "open"
+            }else{
+                self.sectionStateArray[index] = "close"
+            }
+            tableView.reloadSections(IndexSet.init(integer: index) , with: UITableViewRowAnimation.automatic)
         }
         return headView
     }
@@ -104,11 +146,6 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         return 60*kScreenScale
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

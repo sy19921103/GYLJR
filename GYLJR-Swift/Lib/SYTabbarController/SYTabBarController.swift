@@ -18,7 +18,6 @@ class SYTabBarController: UIViewController, TabBarItemDelegate {
     var statusBarStyle: UIStatusBarStyle!
     {
         didSet {
-            print(statusBarStyle.rawValue)
             self.setNeedsStatusBarAppearanceUpdate()
         }
     }
