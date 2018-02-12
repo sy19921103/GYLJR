@@ -10,7 +10,13 @@ import UIKit
 
 class MineCell: BaseCell {
 
-    var titleLabel :UILabel!
+    private var titleLabel :UILabel!
+
+    var title: String! {
+        didSet {
+            titleLabel.text = title
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +30,11 @@ class MineCell: BaseCell {
         titleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 15, width: 200, height: 15)
         contentView.addSubview(titleLabel)
         
-        isShowArrow = true
+        let line = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 10, y: 44, width: 350, height: 1))
+        line.backgroundColor = kLineColor
+        contentView.addSubview(line)
         
+        isShowArrow = true
         
     }
     

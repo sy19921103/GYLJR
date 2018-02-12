@@ -16,4 +16,11 @@ class ShiPei: NSObject {
     
         return rect
     }
+    
+    static func CGSizeMakeScaleWith(width: CGFloat, height: CGFloat) -> CGSize {
+        
+        let size = CGSize(width: width*kScreenScale, height: height*kScreenScale)
+        return size
+    }
+    
 }

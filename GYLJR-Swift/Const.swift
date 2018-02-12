@@ -26,7 +26,7 @@ let kGoldColor = kFuncColor(r: 217, g: 167, b: 78, alpha: 1)
 let kWhiteColor = UIColor.white
 let kBlackColor = UIColor.black
 let kLineColor = kFuncColor(r: 230, g: 230, b: 230, alpha: 1)
-let kBgColor = kFuncColor(r: 242, g: 242, b: 242, alpha: 1)
+let kBgColor = kFuncColor(r: 246, g: 247, b: 249, alpha: 1)
 
 
 

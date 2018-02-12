@@ -17,5 +17,17 @@ class BaseTableView: UITableView {
         // Drawing code
     }
     */
+    
+    override init(frame: CGRect, style: UITableViewStyle) {
+        super.init(frame: frame, style: style)
+        
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
+        separatorStyle = UITableViewCellSeparatorStyle.none
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
 }

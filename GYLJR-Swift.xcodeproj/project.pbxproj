@@ -15,7 +15,7 @@
 		819946DE2030337500A5CB89 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 819946DD2030337500A5CB89 /* 123.png */; };
 		8199472B2030408400A5CB89 /* BannerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199472A2030408400A5CB89 /* BannerScrollView.swift */; };
 		81A5B0B52030237100F65FD1 /* main-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0B42030237100F65FD1 /* main-banner.png */; };
-		81A5B0B72030288F00F65FD1 /* 个人中心-背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0B62030288E00F65FD1 /* 个人中心-背景.png */; };
+		81A5B0B72030288F00F65FD1 /* mine_headerBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0B62030288E00F65FD1 /* mine_headerBg.png */; };
 		81A5B0BB2030290C00F65FD1 /* startImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0BA2030290B00F65FD1 /* startImage.png */; };
 		81A5B0BD2030294A00F65FD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0BC2030294A00F65FD1 /* Images.xcassets */; };
 		81A66639202C4C6C00C8088A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A66638202C4C6C00C8088A /* UserModel.swift */; };
@@ -27,7 +27,7 @@
 		81B0FC02202D2FFE00E1E73B /* SYTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FBFE202D2FFE00E1E73B /* SYTabBar.swift */; };
 		81B0FC03202D2FFE00E1E73B /* SYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FBFF202D2FFE00E1E73B /* SYTabBarController.swift */; };
 		81B0FC04202D2FFE00E1E73B /* SYTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FC00202D2FFE00E1E73B /* SYTabBarItem.swift */; };
-		81B0FC05202D2FFE00E1E73B /* View+Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FC01202D2FFE00E1E73B /* View+Help.swift */; };
+		81B0FC05202D2FFE00E1E73B /* UIView+Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FC01202D2FFE00E1E73B /* UIView+Help.swift */; };
 		81B0FC08202D300E00E1E73B /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FC07202D300E00E1E73B /* RootTabBarController.swift */; };
 		81B0FC36202D312F00E1E73B /* mine_icon_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B0FC0A202D312A00E1E73B /* mine_icon_select.png */; };
 		81B0FC37202D312F00E1E73B /* 个人中心-按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B0FC0B202D312A00E1E73B /* 个人中心-按钮.png */; };
@@ -71,7 +71,7 @@
 		81B0FC5D202D312F00E1E73B /* 新建借款申请-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B0FC31202D312E00E1E73B /* 新建借款申请-2.png */; };
 		81B0FC5E202D312F00E1E73B /* 首页2.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B0FC32202D312E00E1E73B /* 首页2.png */; };
 		81B0FC5F202D312F00E1E73B /* nav_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B0FC33202D312E00E1E73B /* nav_close.png */; };
-		81B0FC60202D312F00E1E73B /* 个人中心.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B0FC34202D312E00E1E73B /* 个人中心.png */; };
+		81B0FC60202D312F00E1E73B /* mine_rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B0FC34202D312E00E1E73B /* mine_rightArrow.png */; };
 		81B0FC61202D312F00E1E73B /* 找回密码.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B0FC35202D312F00E1E73B /* 找回密码.png */; };
 		81B0FC64202D35E500E1E73B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FC63202D35E500E1E73B /* BaseViewController.swift */; };
 		81B0FC68202D362200E1E73B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FC67202D362200E1E73B /* MainViewController.swift */; };
@@ -93,9 +93,16 @@
 		81B1AE8F202AA734001BB38F /* NetworkHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1AE8E202AA734001BB38F /* NetworkHelp.swift */; };
 		81B1AE95202AAB28001BB38F /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1AE94202AAB28001BB38F /* BaseModel.swift */; };
 		81B1AE97202AABE7001BB38F /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1AE96202AABE7001BB38F /* DataResult.swift */; };
-		F55E8FD420309BA000EB2B91 /* SQAutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E8FD120309BA000EB2B91 /* SQAutoScrollView.swift */; };
-		F55E8FD520309BA000EB2B91 /* SQDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E8FD220309BA000EB2B91 /* SQDotView.swift */; };
-		F55E8FD620309BA000EB2B91 /* SQPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E8FD320309BA000EB2B91 /* SQPageControl.swift */; };
+		81BAB84220312A0F00663100 /* SQAutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BAB83F20312A0F00663100 /* SQAutoScrollView.swift */; };
+		81BAB84320312A0F00663100 /* SQDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BAB84020312A0F00663100 /* SQDotView.swift */; };
+		81BAB84420312A0F00663100 /* SQPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BAB84120312A0F00663100 /* SQPageControl.swift */; };
+		81BAB8462031311000663100 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BAB8452031311000663100 /* BaseCell.swift */; };
+		81BAB8482031313700663100 /* main-content.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAB8472031313700663100 /* main-content.png */; };
+		81BAB86820313B2100663100 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81BAB86720313B2100663100 /* Images-2.xcassets */; };
+		81BAB86B20315E3000663100 /* MineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BAB86A20315E3000663100 /* MineCell.swift */; };
+		81BAB86D20316D5B00663100 /* UIButton+Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BAB86C20316D5B00663100 /* UIButton+Help.swift */; };
+		81BAB87320317FA100663100 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BAB87220317FA100663100 /* BaseTableView.swift */; };
+		81BAB8772031977B00663100 /* MineHeaderFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BAB8762031977B00663100 /* MineHeaderFootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,7 +115,7 @@
 		819946DD2030337500A5CB89 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		8199472A2030408400A5CB89 /* BannerScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerScrollView.swift; sourceTree = "<group>"; };
 		81A5B0B42030237100F65FD1 /* main-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-banner.png"; sourceTree = "<group>"; };
-		81A5B0B62030288E00F65FD1 /* 个人中心-背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心-背景.png"; sourceTree = "<group>"; };
+		81A5B0B62030288E00F65FD1 /* mine_headerBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_headerBg.png; sourceTree = "<group>"; };
 		81A5B0BA2030290B00F65FD1 /* startImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startImage.png; sourceTree = "<group>"; };
 		81A5B0BC2030294A00F65FD1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		81A66638202C4C6C00C8088A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -126,7 +133,7 @@
 		81B0FBFE202D2FFE00E1E73B /* SYTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SYTabBar.swift; sourceTree = "<group>"; };
 		81B0FBFF202D2FFE00E1E73B /* SYTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SYTabBarController.swift; sourceTree = "<group>"; };
 		81B0FC00202D2FFE00E1E73B /* SYTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SYTabBarItem.swift; sourceTree = "<group>"; };
-		81B0FC01202D2FFE00E1E73B /* View+Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Help.swift"; sourceTree = "<group>"; };
+		81B0FC01202D2FFE00E1E73B /* UIView+Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Help.swift"; sourceTree = "<group>"; };
 		81B0FC07202D300E00E1E73B /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		81B0FC0A202D312A00E1E73B /* mine_icon_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_icon_select.png; sourceTree = "<group>"; };
 		81B0FC0B202D312A00E1E73B /* 个人中心-按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心-按钮.png"; sourceTree = "<group>"; };
@@ -170,7 +177,7 @@
 		81B0FC31202D312E00E1E73B /* 新建借款申请-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新建借款申请-2.png"; sourceTree = "<group>"; };
 		81B0FC32202D312E00E1E73B /* 首页2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页2.png"; sourceTree = "<group>"; };
 		81B0FC33202D312E00E1E73B /* nav_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_close.png; sourceTree = "<group>"; };
-		81B0FC34202D312E00E1E73B /* 个人中心.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心.png"; sourceTree = "<group>"; };
+		81B0FC34202D312E00E1E73B /* mine_rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_rightArrow.png; sourceTree = "<group>"; };
 		81B0FC35202D312F00E1E73B /* 找回密码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "找回密码.png"; sourceTree = "<group>"; };
 		81B0FC63202D35E500E1E73B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		81B0FC67202D362200E1E73B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -194,11 +201,18 @@
 		81B1AE8E202AA734001BB38F /* NetworkHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelp.swift; sourceTree = "<group>"; };
 		81B1AE94202AAB28001BB38F /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		81B1AE96202AABE7001BB38F /* DataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResult.swift; sourceTree = "<group>"; };
+		81BAB83F20312A0F00663100 /* SQAutoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQAutoScrollView.swift; sourceTree = "<group>"; };
+		81BAB84020312A0F00663100 /* SQDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQDotView.swift; sourceTree = "<group>"; };
+		81BAB84120312A0F00663100 /* SQPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQPageControl.swift; sourceTree = "<group>"; };
+		81BAB8452031311000663100 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		81BAB8472031313700663100 /* main-content.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-content.png"; sourceTree = "<group>"; };
+		81BAB86720313B2100663100 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		81BAB86A20315E3000663100 /* MineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCell.swift; sourceTree = "<group>"; };
+		81BAB86C20316D5B00663100 /* UIButton+Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Help.swift"; sourceTree = "<group>"; };
+		81BAB87220317FA100663100 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		81BAB8762031977B00663100 /* MineHeaderFootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineHeaderFootView.swift; sourceTree = "<group>"; };
 		A5CB321A29195DFC7FBF2362 /* Pods_GYLJR_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYLJR_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1DB3E89E544015A4CBAF91 /* Pods-GYLJR-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYLJR-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYLJR-Swift/Pods-GYLJR-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		F55E8FD120309BA000EB2B91 /* SQAutoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQAutoScrollView.swift; sourceTree = "<group>"; };
-		F55E8FD220309BA000EB2B91 /* SQDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQDotView.swift; sourceTree = "<group>"; };
-		F55E8FD320309BA000EB2B91 /* SQPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQPageControl.swift; sourceTree = "<group>"; };
 		F89352B912570873B8C7C3DC /* Pods-GYLJR-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYLJR-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYLJR-Swift/Pods-GYLJR-Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +236,8 @@
 			children = (
 				8185A47B202EF3A500EAB43F /* ClickLabel.swift */,
 				8199472A2030408400A5CB89 /* BannerScrollView.swift */,
+				81BAB8452031311000663100 /* BaseCell.swift */,
+				81BAB87220317FA100663100 /* BaseTableView.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -241,7 +257,8 @@
 			children = (
 				819946DD2030337500A5CB89 /* 123.png */,
 				81A96431202E8C220034CC03 /* String+Help.swift */,
-				81B0FC01202D2FFE00E1E73B /* View+Help.swift */,
+				81B0FC01202D2FFE00E1E73B /* UIView+Help.swift */,
+				81BAB86C20316D5B00663100 /* UIButton+Help.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -291,8 +308,9 @@
 		81B0FC09202D310800E1E73B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				81BAB8472031313700663100 /* main-content.png */,
 				81A5B0BA2030290B00F65FD1 /* startImage.png */,
-				81A5B0B62030288E00F65FD1 /* 个人中心-背景.png */,
+				81A5B0B62030288E00F65FD1 /* mine_headerBg.png */,
 				81A5B0B42030237100F65FD1 /* main-banner.png */,
 				81B0FC75202D9E1B00E1E73B /* tabBarBgImg.png */,
 				81B0FC71202D997400E1E73B /* navBarBgImg.png */,
@@ -301,7 +319,7 @@
 				81B0FC2A202D312D00E1E73B /* unselect_register.png */,
 				81B0FC21202D312C00E1E73B /* back_white.png */,
 				81B0FC0B202D312A00E1E73B /* 个人中心-按钮.png */,
-				81B0FC34202D312E00E1E73B /* 个人中心.png */,
+				81B0FC34202D312E00E1E73B /* mine_rightArrow.png */,
 				81B0FC1D202D312B00E1E73B /* 个人中心1.png */,
 				81B0FC19202D312B00E1E73B /* 个人中心2.png */,
 				81B0FC27202D312C00E1E73B /* 基本设置-01.png */,
@@ -347,7 +365,7 @@
 		81B0FC62202D313A00E1E73B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				F55E8FD020309BA000EB2B91 /* SQAutoScrollView */,
+				81BAB83E20312A0F00663100 /* SQAutoScrollView */,
 				81B0FBFD202D2FFE00E1E73B /* SYTabbarController */,
 			);
 			path = Lib;
@@ -366,6 +384,8 @@
 			children = (
 				81B0FC77202D9E8B00E1E73B /* Login */,
 				81B0FC69202D362D00E1E73B /* MineViewController.swift */,
+				81BAB8762031977B00663100 /* MineHeaderFootView.swift */,
+				81BAB86A20315E3000663100 /* MineCell.swift */,
 			);
 			name = Mine;
 			path = "New Group";
@@ -427,6 +447,7 @@
 				81B1AE7A202A8B7E001BB38F /* LaunchScreen.storyboard */,
 				81B1AE7D202A8B7E001BB38F /* Info.plist */,
 				81A5B0BC2030294A00F65FD1 /* Images.xcassets */,
+				81BAB86720313B2100663100 /* Images-2.xcassets */,
 			);
 			path = "GYLJR-Swift";
 			sourceTree = "<group>";
@@ -451,6 +472,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		81BAB83E20312A0F00663100 /* SQAutoScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				81BAB83F20312A0F00663100 /* SQAutoScrollView.swift */,
+				81BAB84020312A0F00663100 /* SQDotView.swift */,
+				81BAB84120312A0F00663100 /* SQPageControl.swift */,
+			);
+			path = SQAutoScrollView;
+			sourceTree = "<group>";
+		};
 		8DB782AE1E451E0284CB6AEC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,17 +504,6 @@
 				A5CB321A29195DFC7FBF2362 /* Pods_GYLJR_Swift.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F55E8FD020309BA000EB2B91 /* SQAutoScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				F55E8FD120309BA000EB2B91 /* SQAutoScrollView.swift */,
-				F55E8FD220309BA000EB2B91 /* SQDotView.swift */,
-				F55E8FD320309BA000EB2B91 /* SQPageControl.swift */,
-			);
-			name = SQAutoScrollView;
-			path = "../../../../Downloads/SQAutoScrollView-master/SQAutoScrollView/SQAutoScrollView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,6 +571,7 @@
 			files = (
 				81B0FC5B202D312F00E1E73B /* 首页-灰色按钮.png in Resources */,
 				81B0FC52202D312F00E1E73B /* 基本设置-03.png in Resources */,
+				81BAB86820313B2100663100 /* Images-2.xcassets in Resources */,
 				81B0FC4D202D312F00E1E73B /* back_white.png in Resources */,
 				81B0FC42202D312F00E1E73B /* 借款管理-2.png in Resources */,
 				81B0FC5A202D312F00E1E73B /* 首页-按钮.png in Resources */,
@@ -567,7 +588,7 @@
 				81B0FC51202D312F00E1E73B /* 首页1.png in Resources */,
 				81B0FC37202D312F00E1E73B /* 个人中心-按钮.png in Resources */,
 				81B0FC46202D312F00E1E73B /* 基本设置-已认证.png in Resources */,
-				81B0FC60202D312F00E1E73B /* 个人中心.png in Resources */,
+				81B0FC60202D312F00E1E73B /* mine_rightArrow.png in Resources */,
 				81B0FC58202D312F00E1E73B /* 拍摄.png in Resources */,
 				81B0FC3E202D312F00E1E73B /* 借款管理-1.png in Resources */,
 				81B0FC5E202D312F00E1E73B /* 首页2.png in Resources */,
@@ -585,8 +606,9 @@
 				81B0FC57202D312F00E1E73B /* 绑定银行卡.png in Resources */,
 				81B0FC4F202D312F00E1E73B /* 相册.png in Resources */,
 				81B0FC59202D312F00E1E73B /* 首页-02.png in Resources */,
+				81BAB8482031313700663100 /* main-content.png in Resources */,
 				81B0FC3F202D312F00E1E73B /* 提示弹窗-02.png in Resources */,
-				81A5B0B72030288F00F65FD1 /* 个人中心-背景.png in Resources */,
+				81A5B0B72030288F00F65FD1 /* mine_headerBg.png in Resources */,
 				81B1AE79202A8B7E001BB38F /* Assets.xcassets in Resources */,
 				81B1AE77202A8B7E001BB38F /* Main.storyboard in Resources */,
 				81B0FC41202D312F00E1E73B /* user_icon_login.png in Resources */,
@@ -661,12 +683,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55E8FD420309BA000EB2B91 /* SQAutoScrollView.swift in Sources */,
 				81B0FC79202D9E9D00E1E73B /* LoginViewController.swift in Sources */,
 				81B0FC08202D300E00E1E73B /* RootTabBarController.swift in Sources */,
 				81B1AE72202A8B7E001BB38F /* AppDelegate.swift in Sources */,
 				81B0FC7D202D9FEA00E1E73B /* BaseInfo.swift in Sources */,
-				F55E8FD520309BA000EB2B91 /* SQDotView.swift in Sources */,
+				81BAB8462031311000663100 /* BaseCell.swift in Sources */,
 				81B0FC7B202D9EA900E1E73B /* RegisterViewController.swift in Sources */,
 				81A96448202E932A0034CC03 /* FuncConst.swift in Sources */,
 				81B0FC7F202DA00500E1E73B /* LoginInfo.swift in Sources */,
@@ -674,19 +695,25 @@
 				81B0FC03202D2FFE00E1E73B /* SYTabBarController.swift in Sources */,
 				81B0FC64202D35E500E1E73B /* BaseViewController.swift in Sources */,
 				81B1AE89202A9364001BB38F /* HttpClient.swift in Sources */,
+				81BAB84420312A0F00663100 /* SQPageControl.swift in Sources */,
 				81B0FC68202D362200E1E73B /* MainViewController.swift in Sources */,
-				81B0FC05202D2FFE00E1E73B /* View+Help.swift in Sources */,
+				81B0FC05202D2FFE00E1E73B /* UIView+Help.swift in Sources */,
 				81B1AE8F202AA734001BB38F /* NetworkHelp.swift in Sources */,
 				8199472B2030408400A5CB89 /* BannerScrollView.swift in Sources */,
 				81A6663B202C4F5600C8088A /* ApiManager.swift in Sources */,
 				8185A47C202EF3A500EAB43F /* ClickLabel.swift in Sources */,
 				81B0FC84202DA54500E1E73B /* Tool.swift in Sources */,
+				81BAB86D20316D5B00663100 /* UIButton+Help.swift in Sources */,
 				81B0FC04202D2FFE00E1E73B /* SYTabBarItem.swift in Sources */,
 				81B0FC6A202D362D00E1E73B /* MineViewController.swift in Sources */,
 				81B0FC82202DA38600E1E73B /* ShiPei.swift in Sources */,
+				81BAB8772031977B00663100 /* MineHeaderFootView.swift in Sources */,
+				81BAB86B20315E3000663100 /* MineCell.swift in Sources */,
+				81BAB84220312A0F00663100 /* SQAutoScrollView.swift in Sources */,
+				81BAB84320312A0F00663100 /* SQDotView.swift in Sources */,
 				81B0FC02202D2FFE00E1E73B /* SYTabBar.swift in Sources */,
-				F55E8FD620309BA000EB2B91 /* SQPageControl.swift in Sources */,
 				81B1AE95202AAB28001BB38F /* BaseModel.swift in Sources */,
+				81BAB87320317FA100663100 /* BaseTableView.swift in Sources */,
 				81A66639202C4C6C00C8088A /* UserModel.swift in Sources */,
 				81B1AE8D202A9D0B001BB38F /* Const.swift in Sources */,
 				81A96446202E92860034CC03 /* GTMBase64.m in Sources */,
@@ -828,6 +855,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC1DB3E89E544015A4CBAF91 /* Pods-GYLJR-Swift.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -848,6 +876,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F89352B912570873B8C7C3DC /* Pods-GYLJR-Swift.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

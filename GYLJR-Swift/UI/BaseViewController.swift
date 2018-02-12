@@ -34,7 +34,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        view.backgroundColor = kWhiteColor
+        view.backgroundColor = kBgColor
         addLeftButtonWith(imageName: "", tapSel: #selector(backToLast))
         setNavigationBar()
     }
