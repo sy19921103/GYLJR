@@ -14,6 +14,9 @@
 		8185A47C202EF3A500EAB43F /* ClickLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185A47B202EF3A500EAB43F /* ClickLabel.swift */; };
 		819946DE2030337500A5CB89 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 819946DD2030337500A5CB89 /* 123.png */; };
 		8199472B2030408400A5CB89 /* BannerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199472A2030408400A5CB89 /* BannerScrollView.swift */; };
+		81A10E3820328F5E00B579A9 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A10E3720328F5E00B579A9 /* BaseScrollView.swift */; };
+		81A10E3B2032B06D00B579A9 /* BorrowManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A10E3A2032B06D00B579A9 /* BorrowManagerController.swift */; };
+		81A10E3D2032B4D600B579A9 /* BorrowManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A10E3C2032B4D600B579A9 /* BorrowManagerModel.swift */; };
 		81A5B0B52030237100F65FD1 /* main-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0B42030237100F65FD1 /* main-banner.png */; };
 		81A5B0B72030288F00F65FD1 /* mine_headerBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0B62030288E00F65FD1 /* mine_headerBg.png */; };
 		81A5B0BB2030290C00F65FD1 /* startImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A5B0BA2030290B00F65FD1 /* startImage.png */; };
@@ -111,6 +114,9 @@
 		8185A47B202EF3A500EAB43F /* ClickLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickLabel.swift; sourceTree = "<group>"; };
 		819946DD2030337500A5CB89 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		8199472A2030408400A5CB89 /* BannerScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerScrollView.swift; sourceTree = "<group>"; };
+		81A10E3720328F5E00B579A9 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
+		81A10E3A2032B06D00B579A9 /* BorrowManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowManagerController.swift; sourceTree = "<group>"; };
+		81A10E3C2032B4D600B579A9 /* BorrowManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowManagerModel.swift; sourceTree = "<group>"; };
 		81A5B0B42030237100F65FD1 /* main-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-banner.png"; sourceTree = "<group>"; };
 		81A5B0B62030288E00F65FD1 /* mine_headerBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_headerBg.png; sourceTree = "<group>"; };
 		81A5B0BA2030290B00F65FD1 /* startImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startImage.png; sourceTree = "<group>"; };
@@ -233,14 +239,34 @@
 				8199472A2030408400A5CB89 /* BannerScrollView.swift */,
 				81BAB8452031311000663100 /* BaseCell.swift */,
 				81BAB87220317FA100663100 /* BaseTableView.swift */,
+				81A10E3720328F5E00B579A9 /* BaseScrollView.swift */,
 			);
 			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		81A10E3620328AFC00B579A9 /* MineController */ = {
+			isa = PBXGroup;
+			children = (
+				81B0FC69202D362D00E1E73B /* MineViewController.swift */,
+				81BAB8762031977B00663100 /* MineHeaderFootView.swift */,
+				81BAB86A20315E3000663100 /* MineCell.swift */,
+			);
+			path = MineController;
+			sourceTree = "<group>";
+		};
+		81A10E392032B00C00B579A9 /* BorrowManagerController */ = {
+			isa = PBXGroup;
+			children = (
+				81A10E3A2032B06D00B579A9 /* BorrowManagerController.swift */,
+			);
+			path = BorrowManagerController;
 			sourceTree = "<group>";
 		};
 		81A66637202C4C5000C8088A /* UserModel */ = {
 			isa = PBXGroup;
 			children = (
 				81A66638202C4C6C00C8088A /* UserModel.swift */,
+				81A10E3C2032B4D600B579A9 /* BorrowManagerModel.swift */,
 				81B0FC7E202DA00500E1E73B /* LoginInfo.swift */,
 				81B0FC7C202D9FEA00E1E73B /* BaseInfo.swift */,
 			);
@@ -377,22 +403,21 @@
 		81B0FC66202D360100E1E73B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				81B0FC77202D9E8B00E1E73B /* Login */,
-				81B0FC69202D362D00E1E73B /* MineViewController.swift */,
-				81BAB8762031977B00663100 /* MineHeaderFootView.swift */,
-				81BAB86A20315E3000663100 /* MineCell.swift */,
+				81A10E3620328AFC00B579A9 /* MineController */,
+				81A10E392032B00C00B579A9 /* BorrowManagerController */,
+				81B0FC77202D9E8B00E1E73B /* LoginController */,
 			);
 			name = Mine;
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		81B0FC77202D9E8B00E1E73B /* Login */ = {
+		81B0FC77202D9E8B00E1E73B /* LoginController */ = {
 			isa = PBXGroup;
 			children = (
 				81B0FC78202D9E9D00E1E73B /* LoginViewController.swift */,
 				81B0FC7A202D9EA900E1E73B /* RegisterViewController.swift */,
 			);
-			path = Login;
+			path = LoginController;
 			sourceTree = "<group>";
 		};
 		81B0FC80202DA36D00E1E73B /* Utity */ = {
@@ -675,7 +700,9 @@
 			files = (
 				81B0FC79202D9E9D00E1E73B /* LoginViewController.swift in Sources */,
 				81B0FC08202D300E00E1E73B /* RootTabBarController.swift in Sources */,
+				81A10E3820328F5E00B579A9 /* BaseScrollView.swift in Sources */,
 				81B1AE72202A8B7E001BB38F /* AppDelegate.swift in Sources */,
+				81A10E3B2032B06D00B579A9 /* BorrowManagerController.swift in Sources */,
 				81B0FC7D202D9FEA00E1E73B /* BaseInfo.swift in Sources */,
 				81BAB8462031311000663100 /* BaseCell.swift in Sources */,
 				81B0FC7B202D9EA900E1E73B /* RegisterViewController.swift in Sources */,
@@ -696,6 +723,7 @@
 				81BAB86D20316D5B00663100 /* UIButton+Help.swift in Sources */,
 				81B0FC04202D2FFE00E1E73B /* SYTabBarItem.swift in Sources */,
 				81B0FC6A202D362D00E1E73B /* MineViewController.swift in Sources */,
+				81A10E3D2032B4D600B579A9 /* BorrowManagerModel.swift in Sources */,
 				81B0FC82202DA38600E1E73B /* ShiPei.swift in Sources */,
 				81BAB8772031977B00663100 /* MineHeaderFootView.swift in Sources */,
 				81BAB86B20315E3000663100 /* MineCell.swift in Sources */,
@@ -851,7 +879,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "GYLJR-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sy.GYLJR-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -872,7 +900,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "GYLJR-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sy.GYLJR-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";

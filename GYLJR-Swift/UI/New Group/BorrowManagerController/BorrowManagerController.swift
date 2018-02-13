@@ -10,10 +10,16 @@ import UIKit
 
 class BorrowManagerController: BaseViewController {
 
+    var tableView: BaseTableView!
+    var dataArray: Array<BorrowManagerModel>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "借款管理"
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

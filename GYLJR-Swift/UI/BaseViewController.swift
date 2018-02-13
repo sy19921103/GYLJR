@@ -33,7 +33,8 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = kBgColor
         addLeftButtonWith(imageName: "", tapSel: #selector(backToLast))
         setNavigationBar()

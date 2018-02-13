@@ -2,17 +2,20 @@ PODS:
   - Kingfisher (3.12.2)
   - RNCryptor (5.0.1)
   - SnapKit (3.2.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Kingfisher
   - RNCryptor
   - SnapKit
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Kingfisher: 320626678acadfcf47008b3c6841cd882050737b
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: a8832a67f1286bdfffcc84a5c6e63d31f09a2b36
+PODFILE CHECKSUM: af95b96de17217ffab614f8e8c1a8f44480356a7
 
 COCOAPODS: 1.2.1

@@ -145,6 +145,7 @@ public class SQAutoScrollView: UIView {
         collectionView?.isPagingEnabled = true
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
+        collectionView?.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
         addSubview(collectionView!)
         
         collectionView?.register(SQAutoScrollCell.self, forCellWithReuseIdentifier: reuseID)

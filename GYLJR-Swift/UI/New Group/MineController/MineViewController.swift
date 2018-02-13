@@ -43,12 +43,16 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func initUI()
     {
+//        let view111 = UIView(frame: CGRect(x: 0, y: 0, width: kScreen_width, height: 200))
+//        view111.backgroundColor = kGoldColor
+//        view.addSubview(view111)
+        
         tableView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreen_width, height:kScreen_Height-kTabBarHeight-kStatusBarHeight) , style: UITableViewStyle.grouped)
         tableView.delegate = self;
         tableView.dataSource = self
         tableView.sectionFooterHeight = 0
         view.addSubview(tableView)
-        
+
         generateHeaderView()
     }
     
@@ -63,8 +67,8 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         titleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 0, y: 50, width: 375, height: 25)
         headerBgIV.addSubview(titleLabel)
         
-        userLabel = Tool.createLabelWith(title: "欢迎！<账户名>", textColor: kWhiteColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.center, isFitFont: true)
-        userLabel.frame = ShiPei.CCRectMakeScaleWith(x: 0, y: 130, width: 375, height: 20)
+        userLabel = Tool.createLabelWith(title: "欢迎！<账户名>", textColor: kWhiteColor, bgColor: nil, textFont: 18, textAlignment: NSTextAlignment.center, isFitFont: true)
+        userLabel.frame = ShiPei.CCRectMakeScaleWith(x: 0, y: 110, width: 375, height: 20)
         headerBgIV.addSubview(userLabel)
         
         let applyBtn = UIButton()
@@ -73,9 +77,9 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         headerBgIV.addSubview(applyBtn)
         applyBtn.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.height.equalTo(35*kScreenScale)
-            make.bottom.equalToSuperview().offset(-40*kScreenScale)
-            make.width.equalTo(113*kScreenScale)
+            make.height.equalTo(60*kScreenScale)
+            make.bottom.equalToSuperview().offset(-30*kScreenScale)
+            make.width.equalTo(200*kScreenScale)
         }
     
         tableView.tableHeaderView = headerBgIV
@@ -117,12 +121,19 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
         headView?.index = section
         headView?.showMoreBlock = { (index) in
-            if self.sectionStateArray[index] == "close"{
-                self.sectionStateArray[index] = "open"
+            
+            if(index == 0){
+                
+            }else if (index == 1){
+                
             }else{
-                self.sectionStateArray[index] = "close"
-            }
+                if self.sectionStateArray[index] == "close"{
+                    self.sectionStateArray[index] = "open"
+                }else{
+                    self.sectionStateArray[index] = "close"
+                }
             tableView.reloadSections(IndexSet.init(integer: index) , with: UITableViewRowAnimation.automatic)
+            }
         }
         return headView
     }
@@ -144,6 +155,37 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60*kScreenScale
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var vc: BaseViewController
+        
+        if indexPath.section == 0 {
+            
+            
+        }else if indexPath.section == 1 {
+         
+            
+            
+        }else if indexPath.section == 2{
+            
+            if indexPath.row == 0{
+                
+                vc = BorrowManagerController()
+                navigationController?.pushViewController(vc, animated: true)
+
+            }else if indexPath.row == 1{
+                
+            }
+            
+        }else if indexPath.section == 3{
+            if indexPath.row == 0{
+                
+            }else if indexPath.row == 1{
+                
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

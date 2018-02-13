@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: BaseViewController
 {
     var defaultBannerIV: UIImageView!
-    var mainSV: UIScrollView!
+    var mainSV: BaseScrollView!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +39,7 @@ class MainViewController: BaseViewController
 //        })
 //        view.addSubview(cycleView)
         
-        mainSV = UIScrollView(frame: CGRect(x: 0, y: 0, width: kScreen_width, height: kScreen_Height-kTabBarHeight))
+        mainSV = BaseScrollView(frame: CGRect(x: 0, y: 0, width: kScreen_width, height: kScreen_Height-kTabBarHeight))
         mainSV.contentSize = ShiPei.CGSizeMakeScaleWith(width: 375, height: 1646)
         view.addSubview(mainSV)
         

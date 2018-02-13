@@ -7,6 +7,7 @@ target "GYLJR-Swift" do
 pod 'SnapKit'
 pod ‘RNCryptor’
 pod ‘Kingfisher’
+pod ‘SwiftyJSON’
 
 end
 
