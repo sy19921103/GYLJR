@@ -18,11 +18,11 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     
     func checkLoginInfo() {
-//        if(ApiManager.shared.loginInfo == nil){
-//
-//            let loginVC = LoginViewController()
-//            navigationController?.pushViewController(loginVC, animated: false)
-//        }
+        if(ApiManager.shared.loginInfo == nil){
+
+            let loginVC = LoginViewController()
+            navigationController?.pushViewController(loginVC, animated: false)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -43,10 +43,6 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func initUI()
     {
-//        let view111 = UIView(frame: CGRect(x: 0, y: 0, width: kScreen_width, height: 200))
-//        view111.backgroundColor = kGoldColor
-//        view.addSubview(view111)
-        
         tableView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreen_width, height:kScreen_Height-kTabBarHeight-kStatusBarHeight) , style: UITableViewStyle.grouped)
         tableView.delegate = self;
         tableView.dataSource = self
@@ -87,6 +83,12 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     @objc func applyMoneyClick() {
         CLog("apply")
+        kUserModel.loginBy(mobile: "11111", password: "111111", modelCompletionBlock: { (dataResult) in
+            
+            
+        }) { (error) in
+            
+        }
     }
     
     

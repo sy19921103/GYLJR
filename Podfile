@@ -8,6 +8,8 @@ pod 'SnapKit'
 pod ‘RNCryptor’
 pod ‘Kingfisher’
 pod ‘SwiftyJSON’
+pod ‘HandyJSON’
+pod ‘Moya’
 
 end
 

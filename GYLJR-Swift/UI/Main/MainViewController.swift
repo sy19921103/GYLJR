@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HandyJSON
 
 class MainViewController: BaseViewController
 {
@@ -59,7 +60,39 @@ class MainViewController: BaseViewController
     
     @objc func applyClick() {
         CLog("apply")
+        print(type(of: String.self))
+        let jsonString = "{\"id\":12345,\"msg\":{\"arrays\":[{\"age\":1},{\"age\":2}]}}"
+        if let responseModel = JSONDeserializer<responseModel<CatModel>>.deserializeFrom(json: jsonString) {
+            
+            /// model转json 为了方便在控制台查看
+            print(responseModel.toJSONString(prettyPrint: true)!)
+            
+            /// 遍历responseModel.data
+            responseModel.msg?.arrays?.forEach({ (model) in
+                print(model.age!);
+            })
+            
+        }
     }
     
 }
+
+class responseModel<T: HandyJSON>: HandyJSON {
+    
+    var msg:T?
+    var id: Int!
+    required init() {
+    }
+}
+class CatModel: HandyJSON {
+    
+    var arrays: [CatDetail]?
+    required init() {
+        
+    }
+}
+class CatDetail: CatModel{
+    var age: Int?
+}
+
 

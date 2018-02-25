@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import HandyJSON
+class LoginInfo: ResponseInfo {
 
-class LoginInfo: BaseInfo {
-
+    var co_name: String?
+    var legal_person: String?
 }

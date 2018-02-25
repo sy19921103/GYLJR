@@ -7,7 +7,12 @@
 //
 
 import UIKit
+import HandyJSON
 
-class BaseInfo: NSObject {
-
+class BaseInfo<T:Any>: HandyJSON {
+    
+    var code: Int = -1
+    var msg: T!
+    var time: String!
+    required init() {}
 }

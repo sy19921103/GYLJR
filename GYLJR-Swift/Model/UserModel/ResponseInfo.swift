@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import HandyJSON
+class ResponseInfo: HandyJSON {
 
-class ResponseInfo: NSObject {
-
+    required init() {
+        
+    }
 }

@@ -11,10 +11,8 @@ import UIKit
 class DataResult: NSObject {
 
     var dataInfoArray :Array<Any>?
-    var dataInfoDict :Dictionary<String, Any>!
+    var dataInfo :Any?
     var error :NSError?
     var message :String!
     var code :Int!
-    var json :Any?
-
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HandyJSON
 
 class BorrowManagerController: BaseViewController {
 
@@ -17,9 +18,10 @@ class BorrowManagerController: BaseViewController {
         super.viewDidLoad()
 
         self.title = "借款管理"
-        
-        
-        
+        let jsonString = "{\"id\":12345,\"color\":\"black\",\"cats\":[{\"age\":1},{\"age\":2}]}"
+        if let cat = JSONDeserializer<Cat>.deserializeFrom(json: jsonString) {
+            print(cat.age)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,3 +41,15 @@ class BorrowManagerController: BaseViewController {
     */
 
 }
+
+class Animal: HandyJSON {
+    var id: String!
+    var color: String?
+    var cats: Array<Any>?
+    required init() {}
+}
+class Cat: Animal {
+    var age: Int?
+    required init() {}
+}
+

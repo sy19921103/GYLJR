@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HandyJSON
 
 class UserModel: BaseModel {
     
@@ -17,17 +18,36 @@ class UserModel: BaseModel {
         
         super.fetchModelData(modelCompletionBlock: modelCompletionBlock,
                              modelFailBlock: modelFailBlock,
-                             modelPraserBlock: { (diction) -> DataResult in
+                             modelPraserBlock: { (diction) in
                                 self.praserRegisterUser(data: diction)
         },
                              parameters: parameters,
                              urlApi: apiManager.registerApi)
     }
     
-    func praserRegisterUser(data :Data) -> DataResult {
+    func praserRegisterUser(data :Data) {
         
-        dataResult.dataInfoDict = super.dictFromResponseData(data: data)
-        return dataResult
+        
+        
     }
-
+    
+    func loginBy(mobile: String, password: String, modelCompletionBlock: @escaping ModelCompletionBlock, modelFailBlock: @escaping ModelFailBlock) {
+        
+        let parameters = ["mobile": mobile, "password": password]
+        
+        super.fetchModelData(modelCompletionBlock: modelCompletionBlock,
+                             modelFailBlock: modelFailBlock,
+                             modelPraserBlock: { (diction)  in
+                                self.praserLoginUser(data: diction)
+        },
+                             parameters: parameters,
+                             urlApi: apiManager.loginApi)
+    }
+    
+    func praserLoginUser(data :Data) {
+        
+        let baseInfo = getBaseInfoWith(data: data, type: LoginInfo.self)
+        dataResult.dataInfo = baseInfo.msg
+    }
+    
 }

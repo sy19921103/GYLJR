@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HandyJSON
 
 class BaseModel: HttpClient {
     
@@ -20,15 +21,14 @@ class BaseModel: HttpClient {
     }
     
     typealias ModelCompletionBlock = (DataResult) -> Void
-    typealias ModelFailBlock = (NSError) -> Void
-    typealias ModelPraserBlock = (Data) -> DataResult
+    typealias ModelFailBlock = (Error) -> Void
+    typealias ModelPraserBlock = (Data) -> Void
     
     func fetchModelData(modelCompletionBlock: @escaping ModelCompletionBlock,
                               modelFailBlock: @escaping ModelFailBlock,
                             modelPraserBlock: @escaping ModelPraserBlock,
                                   parameters: Dictionary<String, Any>,
                                       urlApi: String
-        
         
     ) -> Void {
         
@@ -37,15 +37,16 @@ class BaseModel: HttpClient {
             let error = self.isSuccessByResponseData(data: data)
             if (error != nil){
                 modelFailBlock(error!)
+            }else{
+                modelPraserBlock(data)
             }
-            let result = modelPraserBlock(data)
-            modelCompletionBlock(result)
+            modelCompletionBlock(self.dataResult)
         },
                       httpFailBlock: { (error) in
                         modelFailBlock(error)
         },
                       parameters: parameters,
-                      urlString: kBaseUrl+urlApi,
+                      urlString: kBaseUrl,
                       isPost: true)
     }
     
@@ -54,29 +55,21 @@ class BaseModel: HttpClient {
         var error :NSError?
         let responseDict = (try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)) as! Dictionary<String, Any>
         let code = responseDict["error_id"] as! Int
-        let message = (responseDict["message"] is String) ? responseDict["message"] as! String : ""
+        let message = (responseDict["msg"] is String) ? responseDict["msg"] as! String : ""
 
         if (code != 0){
             error = NSError(domain: message, code: code, userInfo: nil)
         }
-        
-        dataResult.dataInfoDict = responseDict
         dataResult.code = code
         dataResult.error = error
         dataResult.message = message
-    
         return error
     }
     
-    func dictFromResponseData(data: Data) -> Dictionary<String, Any>! {
+    func getBaseInfoWith<T>(data: Data, type: T) -> BaseInfo<T>{
         
-        let responseDict = (try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)) as! Dictionary<String, Any>
-        print(responseDict)
-        if(responseDict["msg"] is Dictionary<String, Any>){
-            return responseDict["msg"] as! Dictionary<String, Any>
-        }else{
-            return nil
-        }
+        let jsonStr = String(data: data, encoding: String.Encoding.utf8)
+        let baseInfo = JSONDeserializer<BaseInfo<T>>.deserializeFrom(json: jsonStr)
+        return baseInfo!
     }
-
 }

@@ -10,10 +10,25 @@ import UIKit
 
 class ForgetPwdViewController: BaseViewController {
 
+    var contentView1: UIView!
+    
+    
+    var contentView2: UIView!
+    var contentView3: UIView!
+    var contentView4: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "找回密码"
+        initUI()
+    }
+    
+    func initUI() {
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,7 +12,8 @@ import UIKit
 let kScreen_width = UIScreen.main.bounds.size.width
 let kScreen_Height = UIScreen.main.bounds.size.height
 let kScreenScale = kScreen_width/375
-let kBaseUrl = "http://www.gylapi.com"
+//let kBaseUrl = "http://www.gylapi.com"
+let kBaseUrl = "http://www.ylfcf.com/API/to_api.php"
 let kUserModel = UserModel()
 let kIsIphoneX = ((kScreen_Height == 812) ? true:false)
 let kTabBarHeight = CGFloat((kIsIphoneX ? 68.0 : 48.0))

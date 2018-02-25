@@ -215,6 +215,12 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
     
     @objc func registerClick() {
         CLog("register")
+        
+        kUserModel.registerBy(mobile: mobileTF.text!, password: pwdTF.text!.md5Encodeing(), companyName: "11111111", modelCompletionBlock: { (dataResult) in
+            
+        }) { (error) in
+            
+        }
     }
     
     @objc func checkBoxClick(sender: UIButton) {

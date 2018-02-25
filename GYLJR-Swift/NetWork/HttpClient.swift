@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class HttpClient: NSObject {
 
     var name :String?
     typealias HttpCompletionBlock = (Data) -> Void
-    typealias HttpFailBlock = (NSError) -> Void
+    typealias HttpFailBlock = (Error) -> Void
     
     func fetchHttpData(httpCompletionBlock: @escaping HttpCompletionBlock,
                              httpFailBlock: @escaping HttpFailBlock,
@@ -21,45 +22,21 @@ class HttpClient: NSObject {
                                     isPost: Bool
                                    
         ) {
-        let session = URLSession.shared
-        let serUrl = URL(string: urlString)
-        var request = URLRequest(url: serUrl!);
-        request.httpBody = getBody(parameters: parameters!)?.data(using: String.Encoding.utf8)
-        if(isPost){
-            request.httpMethod = "POST"
-        }else {
-            request.httpMethod = "GET"
-        }
-        print(urlString)
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            
-            if (error != nil) {
-                httpFailBlock(error! as NSError)
-                print(error!.localizedDescription)
-            }else{
-                let resposeObject = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
-                print(resposeObject!)
-                httpCompletionBlock(data!)
+        
+        if isPost {
+            Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseData { (response) in
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("firstMethod --> response() --> utf8Text = \(utf8Text)")
+                }
+                
+                if(response.error != nil){
+                    httpFailBlock(response.error!)
+                }else{
+                    httpCompletionBlock(response.data!)
+                }
             }
-        }
-        
-        dataTask.resume();
-    }
-    
-    func getBody(parameters: Dictionary<String, Any>) -> String? {
-        
-        var body = "";
-        for (key, value) in parameters {
-            
-            let str = "\(key)=\(value)&"
-            body = body+str
-        }
-        print(body)
-        if body.count > 1 {
-            body.removeLast()
-            return body
         }else{
-            return nil
+            Alamofire.request(urlString)
         }
     }
 }

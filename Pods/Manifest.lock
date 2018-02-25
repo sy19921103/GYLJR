@@ -1,21 +1,35 @@
 PODS:
+  - Alamofire (4.5.0)
+  - HandyJSON (1.7.2)
   - Kingfisher (3.12.2)
+  - Moya (9.0.0):
+    - Moya/Core (= 9.0.0)
+  - Moya/Core (9.0.0):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Result (3.2.3)
   - RNCryptor (5.0.1)
   - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - HandyJSON
   - Kingfisher
+  - Moya
   - RNCryptor
   - SnapKit
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Kingfisher: 320626678acadfcf47008b3c6841cd882050737b
+  Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: af95b96de17217ffab614f8e8c1a8f44480356a7
+PODFILE CHECKSUM: c7f37ed893941d2f790eb8ec8f1eff37543225ab
 
 COCOAPODS: 1.2.1

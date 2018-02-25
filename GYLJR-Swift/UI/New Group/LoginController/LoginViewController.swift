@@ -95,7 +95,18 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc func loginClick() {
-        CLog("login")
+        
+        
+        kUserModel.loginBy(mobile: userTF.text!, password:pwdTF.text!.md5Encodeing(), modelCompletionBlock: { (dataResult) in
+            
+            if dataResult.code == 0{
+                let loginInfo = dataResult.dataInfo as! LoginInfo
+            }
+            print(dataResult.message)
+        }) { (error) in
+            
+        }
+        
     }
     
     @objc func registerClick() {

@@ -13,6 +13,7 @@ class ApiManager: NSObject {
     static let shared = ApiManager()
     
     let registerApi = "/co_user/info/register"
+    let loginApi = "/co_user/info/login"
     let loginInfo :LoginInfo? = nil
 
     private override init() {
