@@ -1,13 +1,13 @@
 //
-//  BaseInfo.swift
+//  ResponseInfo.swift
 //  GYLJR-Swift
 //
-//  Created by iOS on 2018/2/24.
+//  Created by iOS on 2018/2/25.
 //  Copyright © 2018年 iOS. All rights reserved.
 //
 
 import UIKit
 
-class BaseInfo: NSObject {
+class ResponseInfo: NSObject {
 
 }
