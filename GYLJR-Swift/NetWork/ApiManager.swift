@@ -8,16 +8,24 @@
 
 import UIKit
 
+let loginNameKey = "loginNameKey"
+
 class ApiManager: NSObject {
     
     static let shared = ApiManager()
     
     let registerApi = "/co_user/info/register"
     let loginApi = "/co_user/info/login"
-    let loginInfo :LoginInfo? = nil
+    var loginInfo :LoginInfo? {
+        
+        didSet {
+            Utlity.saveToSandboxWith(loginInfo, loginNameKey)
+        }
+    }
 
     private override init() {
-        
+     
+        loginInfo = Utlity.readFromSandboxWith(loginNameKey) as? LoginInfo
     }
     
 }

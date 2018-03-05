@@ -18,11 +18,14 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     
     func checkLoginInfo() {
-        if(ApiManager.shared.loginInfo == nil){
-
+        
+//        if(ApiManager.shared.loginInfo == nil){
+        
             let loginVC = LoginViewController()
             navigationController?.pushViewController(loginVC, animated: false)
-        }
+//        }else{
+//            
+//        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +42,12 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         title = "我的"
         checkLoginInfo()
         initUI()
+        ApiManager.shared.loginInfo?.addObserver(self, forKeyPath: loginNameKey, options: NSKeyValueObservingOptions.new, context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        CLog(11111)
+        checkLoginInfo()
     }
     
     func initUI()
@@ -47,6 +56,7 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self;
         tableView.dataSource = self
         tableView.sectionFooterHeight = 0
+        tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
         view.addSubview(tableView)
 
         generateHeaderView()
@@ -54,17 +64,17 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func generateHeaderView() {
         
-        let headerBgIV = UIImageView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 0, width: 375, height: 247))
+        let headerBgIV = UIImageView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 0, width: 375, height: 247))
         headerBgIV.image = UIImage(named: "mine_headerBg")
         headerBgIV.isUserInteractionEnabled = true
         
         let titleLabel = Tool.createLabelWith(title: "个人中心", textColor: kWhiteColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.center, isFitFont: true)
         titleLabel.font = Tool.fitFontWith(font: 18, isBold: true)
-        titleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 0, y: 50, width: 375, height: 25)
+        titleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 0, y: 50, width: 375, height: 25)
         headerBgIV.addSubview(titleLabel)
         
         userLabel = Tool.createLabelWith(title: "欢迎！<账户名>", textColor: kWhiteColor, bgColor: nil, textFont: 18, textAlignment: NSTextAlignment.center, isFitFont: true)
-        userLabel.frame = ShiPei.CCRectMakeScaleWith(x: 0, y: 110, width: 375, height: 20)
+        userLabel.frame = ShiPei.CGRectMakeScaleWith(x: 0, y: 110, width: 375, height: 20)
         headerBgIV.addSubview(userLabel)
         
         let applyBtn = UIButton()
@@ -127,7 +137,8 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             if(index == 0){
                 
             }else if (index == 1){
-                
+                let vc = SettingViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
             }else{
                 if self.sectionStateArray[index] == "close"{
                     self.sectionStateArray[index] = "open"
@@ -158,27 +169,19 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60*kScreenScale
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var vc: BaseViewController
-        
-        if indexPath.section == 0 {
-            
-            
-        }else if indexPath.section == 1 {
-         
-            
-            
-        }else if indexPath.section == 2{
+        if indexPath.section == 2{
             
             if indexPath.row == 0{
                 
-                vc = BorrowManagerController()
+                let vc = BorrowManagerController()
                 navigationController?.pushViewController(vc, animated: true)
 
             }else if indexPath.row == 1{
                 
+                let vc = ApplyBorrowViewController()
+                navigationController?.pushViewController(vc, animated: true)
             }
             
         }else if indexPath.section == 3{
@@ -190,20 +193,8 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    deinit {
+        ApiManager.shared.loginInfo?.removeObserver(self, forKeyPath: loginNameKey)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

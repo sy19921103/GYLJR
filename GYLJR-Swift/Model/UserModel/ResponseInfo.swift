@@ -8,9 +8,9 @@
 
 import UIKit
 import HandyJSON
-class ResponseInfo: HandyJSON {
+class ResponseInfo: NSObject, HandyJSON {
 
-    required init() {
+    override required init() {
         
     }
 }

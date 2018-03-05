@@ -27,7 +27,6 @@ class BaseViewController: UIViewController {
     
     func setStatusBarStyle(statusBarStyle: UIStatusBarStyle) {
         let rootController = getMainRootViewController()
-        print(statusBarStyle.rawValue)
         rootController?.setStatusBarStyle(statusBarStyle: statusBarStyle)
     }
     
@@ -39,7 +38,6 @@ class BaseViewController: UIViewController {
         addLeftButtonWith(imageName: "", tapSel: #selector(backToLast))
         setNavigationBar()
     }
-    
     
     
     func setNavigationBar()  {
@@ -81,6 +79,34 @@ class BaseViewController: UIViewController {
         
         let rootController = getMainRootViewController()
         rootController?.selectIndex = index
+    }
+    
+    func createTipAlertViewWith(_ message: String) {
+        
+        let tipLabel = Tool.createLabelWith(title: message, textColor: kWhiteColor, bgColor: kFuncColor(r: 140, g: 140, b: 140, alpha: 1), textFont: 14, textAlignment: NSTextAlignment.center, isFitFont: true)
+        let window = UIApplication.shared.keyWindow
+        window?.addSubview(tipLabel)
+        
+        let size = message.boundingRect(with: ShiPei.CGSizeMakeScaleWith(width: 345, height: 50), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font:tipLabel.font], context: nil).size
+        
+        tipLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-40*kScreenScale)
+            make.width.equalTo((size.width+20)*kScreenScale)
+            make.height.equalTo((size.height+20)*kScreenScale)
+        }
+        tipLabel.layer.masksToBounds = true
+        tipLabel.layer.cornerRadius = (size.height+20)/2*kScreenScale
+    
+        UIView.animate(withDuration: 4, animations: {
+            
+            tipLabel.alpha = 0.5
+            
+        }) { (completion) in
+            
+            tipLabel.alpha = 0
+            tipLabel.removeFromSuperview()
+        }
     }
     
     @objc func backToLast() {

@@ -20,7 +20,7 @@ class BaseScrollView: UIScrollView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
+
     }
     
     required init?(coder aDecoder: NSCoder) {

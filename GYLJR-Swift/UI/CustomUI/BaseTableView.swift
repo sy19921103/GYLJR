@@ -23,7 +23,6 @@ class BaseTableView: UITableView {
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-        contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
         separatorStyle = UITableViewCellSeparatorStyle.none
     }
     

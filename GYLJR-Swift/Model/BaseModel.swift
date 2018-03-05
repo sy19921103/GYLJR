@@ -46,7 +46,7 @@ class BaseModel: HttpClient {
                         modelFailBlock(error)
         },
                       parameters: parameters,
-                      urlString: kBaseUrl,
+                      urlString: kBaseUrl+urlApi,
                       isPost: true)
     }
     

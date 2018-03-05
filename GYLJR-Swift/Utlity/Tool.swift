@@ -21,6 +21,7 @@ class Tool: NSObject {
         }
         label.textColor = textColor ?? kBlackColor
         label.backgroundColor = bgColor ?? UIColor.clear
+        label.layer.masksToBounds = true
         label.text = title ?? ""
         
         return label
@@ -37,6 +38,7 @@ class Tool: NSObject {
         }
         btn.setTitle(title ?? "", for: UIControlState.normal)
         btn.setTitleColor(textColor ?? kBlackColor, for: UIControlState.normal)
+        btn.layer.masksToBounds = true
         btn.layer.cornerRadius = cornRadius
         btn.addTarget(target, action: action , for: UIControlEvents.touchUpInside)
         
@@ -65,6 +67,7 @@ class Tool: NSObject {
     ///   - imageScale: 图片宽高比
     ///   - addWidth: 增加的宽度
     /// - Returns: <#return value description#>
+    
     static func createImgBtnWith(imageName: String, frame: CGRect, imageScale: CGFloat, addWidth: CGFloat) ->UIButton {
         
         var btnRect = CGRect()
@@ -94,6 +97,17 @@ class Tool: NSObject {
             if(isBold) {return UIFont.systemFont(ofSize: font*kScreenScale)}
             return UIFont.boldSystemFont(ofSize: font*kScreenScale)
         }
+    }
+    
+    
+    static func attributeParagraphWith(_ lineSpace: CGFloat, _ string: String) -> NSMutableAttributedString
+    {
+        let attriStr = NSMutableAttributedString(string: string)
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = lineSpace*kScreenScale
+        attriStr.addAttribute(.paragraphStyle, value: paragraph, range: NSMakeRange(0, string.count))
+        
+        return attriStr
     }
     
     

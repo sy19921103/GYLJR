@@ -12,13 +12,14 @@ import UIKit
 let kScreen_width = UIScreen.main.bounds.size.width
 let kScreen_Height = UIScreen.main.bounds.size.height
 let kScreenScale = kScreen_width/375
-//let kBaseUrl = "http://www.gylapi.com"
-let kBaseUrl = "http://www.ylfcf.com/API/to_api.php"
+let kBaseUrl = "http://www.gylapi.com"
+//let kBaseUrl = "http://www.ylfcf.com/API/to_api.php"
 let kUserModel = UserModel()
 let kIsIphoneX = ((kScreen_Height == 812) ? true:false)
 let kTabBarHeight = CGFloat((kIsIphoneX ? 68.0 : 48.0))
 let KNavigateBarHeight = CGFloat((kIsIphoneX ? 84.0 : 64.0))
 let kStatusBarHeight = CGFloat((kIsIphoneX ? 40.0 : 0))
+let kBottomSpaceHeight = CGFloat((kIsIphoneX ? 20 : 0))
 
 
 let kTextBlackColor = kFuncColor(r: 70, g: 70, b: 70, alpha: 1)

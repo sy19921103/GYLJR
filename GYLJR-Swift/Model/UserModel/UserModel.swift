@@ -46,7 +46,7 @@ class UserModel: BaseModel {
     
     func praserLoginUser(data :Data) {
         
-        let baseInfo = getBaseInfoWith(data: data, type: LoginInfo.self)
+        let baseInfo = getBaseInfoWith(data: data, type: LoginInfo())
         dataResult.dataInfo = baseInfo.msg
     }
     

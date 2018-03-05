@@ -1,7 +1,9 @@
 PODS:
   - Alamofire (4.5.0)
   - HandyJSON (1.7.2)
+  - IQKeyboardManagerSwift (4.0.13)
   - Kingfisher (3.12.2)
+  - MJRefresh (3.1.12)
   - Moya (9.0.0):
     - Moya/Core (= 9.0.0)
   - Moya/Core (9.0.0):
@@ -14,7 +16,9 @@ PODS:
 
 DEPENDENCIES:
   - HandyJSON
+  - IQKeyboardManagerSwift
   - Kingfisher
+  - MJRefresh
   - Moya
   - RNCryptor
   - SnapKit
@@ -23,13 +27,15 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  IQKeyboardManagerSwift: fb399c4cddcd8d9bbcd2d0c7c81ed290b61c088e
   Kingfisher: 320626678acadfcf47008b3c6841cd882050737b
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: c7f37ed893941d2f790eb8ec8f1eff37543225ab
+PODFILE CHECKSUM: 7e78a809279a631bb1b0d25e216507dae9ad0623
 
 COCOAPODS: 1.2.1

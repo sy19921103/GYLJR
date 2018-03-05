@@ -10,7 +10,7 @@ import UIKit
 
 class ShiPei: NSObject {
 
-    static func CCRectMakeScaleWith(x: CGFloat, y:CGFloat, width:CGFloat, height:CGFloat) -> CGRect{
+    static func CGRectMakeScaleWith(x: CGFloat, y:CGFloat, width:CGFloat, height:CGFloat) -> CGRect{
         
         let rect = CGRect(x: kScreenScale*x, y: kScreenScale*y, width: kScreenScale*width, height: height*kScreenScale)
     

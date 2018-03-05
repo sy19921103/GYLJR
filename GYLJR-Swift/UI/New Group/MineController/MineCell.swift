@@ -27,10 +27,10 @@ class MineCell: BaseCell {
         
         contentView.backgroundColor = kFuncColor(r: 249, g: 245, b: 235, alpha: 1)
         titleLabel = Tool.createLabelWith(title: "", textColor: kTextBlackColor, bgColor: nil, textFont: 14, textAlignment: NSTextAlignment.left, isFitFont: true)
-        titleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 15, width: 200, height: 15)
+        titleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 15, width: 200, height: 15)
         contentView.addSubview(titleLabel)
         
-        let line = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 10, y: 44, width: 350, height: 1))
+        let line = UIView(frame: ShiPei.CGRectMakeScaleWith(x: 10, y: 44, width: 350, height: 1))
         line.backgroundColor = kLineColor
         contentView.addSubview(line)
         

@@ -17,6 +17,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
     var codeTF: UITextField!
     var mobileCodeTF: UITextField!
     var mainScrollView: UIScrollView!
+    var registerBtn: UIButton!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,14 +50,14 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         }
         
         let userTitleLabel = Tool.createLabelWith(title: "用户名", textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont:true)
-        userTitleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
+        userTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
         userView.addSubview(userTitleLabel)
         
         userTF = Tool.createTextFieldWith(placeHolder: "您的账户名或登录名", target: self, isSecurity: false)
-        userTF.frame = ShiPei.CCRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
+        userTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
         userView.addSubview(userTF)
         
-        let userLine = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
+        let userLine = UIView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
         userLine.backgroundColor = kLineColor
         userView.addSubview(userLine)
         
@@ -71,14 +72,14 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         }
         
         let pwdTitleLabel = Tool.createLabelWith(title: "设置密码", textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont:true)
-        pwdTitleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
+        pwdTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
         pwdView.addSubview(pwdTitleLabel)
         
-        pwdTF = Tool.createTextFieldWith(placeHolder: "建议至少使用两种字符组合", target: self, isSecurity: false)
-        pwdTF.frame = ShiPei.CCRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
+        pwdTF = Tool.createTextFieldWith(placeHolder: "建议至少使用两种字符组合", target: self, isSecurity: true)
+        pwdTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
         pwdView.addSubview(pwdTF)
         
-        let pwdLine = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
+        let pwdLine = UIView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
         pwdLine.backgroundColor = kLineColor
         pwdView.addSubview(pwdLine)
         
@@ -93,14 +94,14 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         }
         
         let againPwdTitleLabel = Tool.createLabelWith(title: "确认密码", textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont:true)
-        againPwdTitleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
+        againPwdTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
         againPwdView.addSubview(againPwdTitleLabel)
         
-        againPwdTF = Tool.createTextFieldWith(placeHolder: "请再次输入密码", target: self, isSecurity: false)
-        againPwdTF.frame = ShiPei.CCRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
+        againPwdTF = Tool.createTextFieldWith(placeHolder: "请再次输入密码", target: self, isSecurity: true)
+        againPwdTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
         againPwdView.addSubview(againPwdTF)
         
-        let againPwdLine = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
+        let againPwdLine = UIView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
         againPwdLine.backgroundColor = kLineColor
         againPwdView.addSubview(againPwdLine)
         
@@ -115,14 +116,14 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         }
         
         let mobileTitleLabel = Tool.createLabelWith(title: "中国0086", textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont:true)
-        mobileTitleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
+        mobileTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
         mobileView.addSubview(mobileTitleLabel)
         
         mobileTF = Tool.createTextFieldWith(placeHolder: "建议使用常用手机", target: self, isSecurity: false)
-        mobileTF.frame = ShiPei.CCRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
+        mobileTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
         mobileView.addSubview(mobileTF)
         
-        let mobileLine = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
+        let mobileLine = UIView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
         mobileLine.backgroundColor = kLineColor
         mobileView.addSubview(mobileLine)
         
@@ -133,20 +134,20 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
             make.top.equalTo(mobileView.snp.bottom).offset(0)
             make.left.equalTo(0)
             make.width.equalTo(kScreen_width)
-            make.height.equalTo(60*kScreenScale)
+            make.height.equalTo(0*kScreenScale)
         }
         
-        let codeTitleLabel = Tool.createLabelWith(title: "验证码", textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont:true)
-        codeTitleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
-        codeView.addSubview(codeTitleLabel)
-        
-        codeTF = Tool.createTextFieldWith(placeHolder: "请输入验证码", target: self, isSecurity: false)
-        codeTF.frame = ShiPei.CCRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
-        codeView.addSubview(codeTF)
-        
-        let codeLine = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
-        codeLine.backgroundColor = kLineColor
-        codeView.addSubview(codeLine)
+//        let codeTitleLabel = Tool.createLabelWith(title: "验证码", textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont:true)
+//        codeTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
+//        codeView.addSubview(codeTitleLabel)
+//
+//        codeTF = Tool.createTextFieldWith(placeHolder: "请输入验证码", target: self, isSecurity: false)
+//        codeTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
+//        codeView.addSubview(codeTF)
+//
+//        let codeLine = UIView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
+//        codeLine.backgroundColor = kLineColor
+//        codeView.addSubview(codeLine)
         
         //mobileCodeView
         let mobileCodeView = UIView()
@@ -155,20 +156,20 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
             make.top.equalTo(codeView.snp.bottom).offset(0)
             make.left.equalTo(0)
             make.width.equalTo(kScreen_width)
-            make.height.equalTo(60*kScreenScale)
+            make.height.equalTo(0*kScreenScale)
         }
         
-        let mobileCodeTitleLabel = Tool.createLabelWith(title: "手机验证码", textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont:true)
-        mobileCodeTitleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
-        mobileCodeView.addSubview(mobileCodeTitleLabel)
-        
-        mobileCodeTF = Tool.createTextFieldWith(placeHolder: "请输入手机验证码", target: self, isSecurity: false)
-        mobileCodeTF.frame = ShiPei.CCRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
-        mobileCodeView.addSubview(mobileCodeTF)
-        
-        let mobileCodeLine = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
-        mobileCodeLine.backgroundColor = kLineColor
-        mobileCodeView.addSubview(mobileCodeLine)
+//        let mobileCodeTitleLabel = Tool.createLabelWith(title: "手机验证码", textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont:true)
+//        mobileCodeTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
+//        mobileCodeView.addSubview(mobileCodeTitleLabel)
+//
+//        mobileCodeTF = Tool.createTextFieldWith(placeHolder: "请输入手机验证码", target: self, isSecurity: false)
+//        mobileCodeTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
+//        mobileCodeView.addSubview(mobileCodeTF)
+//
+//        let mobileCodeLine = UIView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
+//        mobileCodeLine.backgroundColor = kLineColor
+//        mobileCodeView.addSubview(mobileCodeLine)
         
         
         //bottomView
@@ -181,18 +182,19 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
             make.height.equalTo(140*kScreenScale)
         }
         
-        let registerBtn = Tool.createButtonWith(title: "立即注册", textColor: kWhiteColor, bgColor: kGoldColor, textFont: 18, isFitFont: true, cornRadius: 5, target: self, action: #selector(registerClick))
-        registerBtn.frame = ShiPei.CCRectMakeScaleWith(x: 20, y: 0, width: 335, height: 60)
+        registerBtn = Tool.createButtonWith(title: "立即注册", textColor: kWhiteColor, bgColor: kGoldColor, textFont: 18, isFitFont: true, cornRadius: 5, target: self, action: #selector(registerClick))
+        registerBtn.frame = ShiPei.CGRectMakeScaleWith(x: 20, y: 0, width: 335, height: 60)
         registerBtn.titleLabel?.font = Tool.fitFontWith(font: 18, isBold: true)
         bottomView.addSubview(registerBtn)
         
-        let agreeCheckBox = Tool.createImgBtnWith(imageName: "select_register", frame: ShiPei.CCRectMakeScaleWith(x: 25, y: 80, width: 20, height: 20), imageScale: 1, addWidth: 5)
+        let agreeCheckBox = UIButton(frame: ShiPei.CGRectMakeScaleWith(x: 25, y: 80, width: 20, height: 20))
+        agreeCheckBox.setBackgroundImage(UIImage(named: "register_select") , for: UIControlState.normal)
+        agreeCheckBox.isSelected = true
         agreeCheckBox.addTarget(self, action: #selector(checkBoxClick(sender:)), for: UIControlEvents.touchUpInside)
         bottomView.addSubview(agreeCheckBox)
         
-        
         let agreementTV = ClickTextView.createClickTextView(contentStr: "我已阅读并同意《元亨祥金控用户注册协议》和《隐私政策》", clickStrArray: ["《元亨祥金控用户注册协议》","《隐私政策》"], foregroundColor: kGoldColor, textColor: kTextColor)
-        agreementTV.frame = ShiPei.CCRectMakeScaleWith(x: 53, y: 75, width: 270, height: 55)
+        agreementTV.frame = ShiPei.CGRectMakeScaleWith(x: 53, y: 75, width: 270, height: 55)
         agreementTV.delegate = self
         agreementTV.font = Tool.fitFontWith(font: 13, isBold: false)
         bottomView.addSubview(agreementTV)
@@ -214,17 +216,52 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
     
     
     @objc func registerClick() {
-        CLog("register")
         
-        kUserModel.registerBy(mobile: mobileTF.text!, password: pwdTF.text!.md5Encodeing(), companyName: "11111111", modelCompletionBlock: { (dataResult) in
+        let result = checkInputInfo()
+        if result != nil {
+            createTipAlertViewWith(result!)
+        }else {
             
-        }) { (error) in
-            
+            kUserModel.registerBy(mobile: mobileTF.text!, password: pwdTF.text!.md5Encodeing(), companyName: "11111111", modelCompletionBlock: { [unowned self] (dataResult) in
+                
+                if dataResult.code == 0 {
+                    self.createTipAlertViewWith("注册成功！")
+                    self.navigationController?.popViewController(animated: true)
+                }else {
+                    self.createTipAlertViewWith(dataResult.message)
+                }
+            }) { (error) in
+                
+            }
         }
     }
     
+    func checkInputInfo() -> String? {
+        
+        if userTF.text == "" {
+            return "请输入用户名"
+        }else if Utlity.checkPassword(pwdTF.text) != nil {
+            return Utlity.checkPassword(pwdTF.text)
+        }else if pwdTF.text != againPwdTF.text {
+            return "两次密码输入不一致"
+        }else if !Utlity.checkMobile(mobileTF.text) {
+            return "请输入正确的手机号"
+        }
+        return nil
+    }
+    
+    
     @objc func checkBoxClick(sender: UIButton) {
-        CLog("check")
+        
+        if sender.isSelected {
+            sender.setBackgroundImage(UIImage(named: "register_unselect") , for: UIControlState.normal)
+            registerBtn.isUserInteractionEnabled = false;
+            registerBtn.backgroundColor = UIColor.gray
+        }else{
+            sender.setBackgroundImage(UIImage(named: "register_select") , for: UIControlState.normal)
+            registerBtn.isUserInteractionEnabled = true;
+            registerBtn.backgroundColor = kGoldColor
+        }
     }
     
     @objc func registerAgreementClick() {

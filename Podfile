@@ -10,7 +10,9 @@ pod ‘Kingfisher’
 pod ‘SwiftyJSON’
 pod ‘HandyJSON’
 pod ‘Moya’
-
+pod 'IQKeyboardManagerSwift'
+pod 'MJRefresh'
+# Encoding of the source code
 end
 
 post_install do |installer|

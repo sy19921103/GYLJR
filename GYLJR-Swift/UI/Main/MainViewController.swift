@@ -8,6 +8,7 @@
 
 import UIKit
 import HandyJSON
+import MJRefresh
 
 class MainViewController: BaseViewController
 {
@@ -35,24 +36,26 @@ class MainViewController: BaseViewController
 //                            "http://p.lrlz.com/data/upload/mobile/special/s303/s303_05442007388249407.png",
 //                            "http://p.lrlz.com/data/upload/mobile/special/s303/s303_05442007470310935.png"]
 //
-//        let cycleView = SQAutoScrollView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 0, width: 375, height: 180), urls: serverImages, didItemCallBack: { (view, index) in
+//        let cycleView = SQAutoScrollView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 0, width: 375, height: 180), urls: serverImages, didItemCallBack: { (view, index) in
 //            print("view--->\(view), index-->\(index)")
 //        })
 //        view.addSubview(cycleView)
         
         mainSV = BaseScrollView(frame: CGRect(x: 0, y: 0, width: kScreen_width, height: kScreen_Height-kTabBarHeight))
+        mainSV.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
         mainSV.contentSize = ShiPei.CGSizeMakeScaleWith(width: 375, height: 1646)
+        mainSV.mj_header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(applyClick))
         view.addSubview(mainSV)
         
-        defaultBannerIV = UIImageView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 0, width: 375, height: 180))
+        defaultBannerIV = UIImageView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 0, width: 375, height: 180))
         defaultBannerIV.image = UIImage(named: "main-banner")
         mainSV.addSubview(defaultBannerIV)
         
-        let contentIV = UIImageView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 200, width: 375, height: 1426))
+        let contentIV = UIImageView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 200, width: 375, height: 1426))
         contentIV.image = UIImage(named: "main-content")
         mainSV.addSubview(contentIV)
         
-        let applyBtn = UIButton(frame: ShiPei.CCRectMakeScaleWith(x: 15, y: 580, width: 345, height: 50))
+        let applyBtn = UIButton(frame: ShiPei.CGRectMakeScaleWith(x: 15, y: 580, width: 345, height: 50))
         applyBtn.addTarget(self, action: #selector(applyClick), for: UIControlEvents.touchUpInside)
         mainSV.addSubview(applyBtn)
         

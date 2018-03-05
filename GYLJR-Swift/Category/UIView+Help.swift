@@ -17,4 +17,8 @@ extension UIView{
         f.size.height = height
         self.frame = f
     }
+    func showBorder(color: UIColor) {
+        self.layer.borderWidth = 1*kScreenScale
+        self.layer.borderColor = color.cgColor
+    }
 }

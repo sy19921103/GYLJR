@@ -13,9 +13,9 @@ private var key: Void?
 
 extension UIButton {
     
-    @IBInspectable var info: String? {
+    @IBInspectable var info: Any? {
         get {
-            return objc_getAssociatedObject(self, &key) as? String
+            return objc_getAssociatedObject(self, &key)
         }
         set(newValue) {
             objc_setAssociatedObject(self, &key, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)

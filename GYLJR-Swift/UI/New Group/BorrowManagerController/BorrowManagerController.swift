@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import HandyJSON
 
-class BorrowManagerController: BaseViewController {
+class BorrowManagerController: BaseViewController, UITableViewDelegate, UITableViewDataSource  {
 
     var tableView: BaseTableView!
     var dataArray: Array<BorrowManagerModel>!
@@ -18,16 +17,36 @@ class BorrowManagerController: BaseViewController {
         super.viewDidLoad()
 
         self.title = "借款管理"
-        let jsonString = "{\"id\":12345,\"color\":\"black\",\"cats\":[{\"age\":1},{\"age\":2}]}"
-        if let cat = JSONDeserializer<Cat>.deserializeFrom(json: jsonString) {
-            print(cat.age)
-        }
+        
+        tableView = BaseTableView.init(frame: CGRect(x:0, y:0, width:kScreen_width, height:kScreen_Height-KNavigateBarHeight), style: UITableViewStyle.plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubview(tableView)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellId = "cellID"
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? BorrowManagerCell
+        if(cell == nil){
+            cell = BorrowManagerCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellId)
+        }
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return ShiPei.CGSizeMakeScaleWith(width: 0, height: 290).height
+    }
+    
+    
     
 
     /*
@@ -41,15 +60,3 @@ class BorrowManagerController: BaseViewController {
     */
 
 }
-
-class Animal: HandyJSON {
-    var id: String!
-    var color: String?
-    var cats: Array<Any>?
-    required init() {}
-}
-class Cat: Animal {
-    var age: Int?
-    required init() {}
-}
-

@@ -40,20 +40,20 @@ class MineHeaderFootView: UITableViewHeaderFooterView {
     
     func initUI() {
         
-        let bgBtn = UIButton(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 0, width: 375, height: 60))
+        let bgBtn = UIButton(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 0, width: 375, height: 60))
         bgBtn.backgroundColor = kWhiteColor
         bgBtn.addTarget(self, action: #selector(sectionClick(sender:)), for: UIControlEvents.touchUpInside)
         contentView.addSubview(bgBtn)
         
         let titleLabel = Tool.createLabelWith(title: title, textColor: kTextBlackColor, bgColor: nil, textFont: 16, textAlignment: NSTextAlignment.left, isFitFont: true)
-        titleLabel.frame = ShiPei.CCRectMakeScaleWith(x: 15, y: 20, width: 200, height: 20)
+        titleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 200, height: 20)
         bgBtn.addSubview(titleLabel)
         
         arrowIV = UIImageView(image: UIImage(named: "mine_rightArrow"))
-        arrowIV.frame = ShiPei.CCRectMakeScaleWith(x: 340, y: 20, width: 20, height: 20)
+        arrowIV.frame = ShiPei.CGRectMakeScaleWith(x: 340, y: 20, width: 20, height: 20)
         bgBtn.addSubview(arrowIV)
         
-        let line = UIView(frame: ShiPei.CCRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
+        let line = UIView(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 59, width: 375, height: 1))
         line.backgroundColor = kLineColor
         bgBtn.addSubview(line)
     }

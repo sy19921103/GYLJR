@@ -22,11 +22,13 @@ class HttpClient: NSObject {
                                     isPost: Bool
                                    
         ) {
-        
+        CLog("url",urlString)
+        CLog("parameter",parameters)
         if isPost {
             Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseData { (response) in
+                
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("firstMethod --> response() --> utf8Text = \(utf8Text)")
+                    print("response() = \(utf8Text.replaceUnicode())")
                 }
                 
                 if(response.error != nil){
