@@ -23,6 +23,7 @@ class CompanyMaterialViewController: BaseViewController, UIImagePickerController
     var materialSArray: Array<Data?>!
     var photoType = PhotoType.NO
     var index = 0
+    var dataArray: Array<String>?
     let yyzzView = UIView()
     let idFrontView = UIView()
     let idBehindView = UIView()
@@ -347,7 +348,15 @@ class CompanyMaterialViewController: BaseViewController, UIImagePickerController
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+        let imageName = imageURL.path!
+        
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let data = UIImagePNGRepresentation(image)
+        let dataStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
+
+        
+       
         
         switch index {
             
@@ -355,24 +364,28 @@ class CompanyMaterialViewController: BaseViewController, UIImagePickerController
             
             let btn = yyzzView.viewWithTag(10) as! UIButton
             btn.setImage(image, for: UIControlState.normal)
+//            dataArray?.insert(dataStr, at: 0)
             break
             
         case 11:
             
             let btn = idFrontView.viewWithTag(11) as! UIButton
             btn.setImage(image, for: UIControlState.normal)
+//            dataArray?.insert(dataStr, at: 1)
             break
             
         case 12:
             
             let btn = idBehindView.viewWithTag(12) as! UIButton
             btn.setImage(image, for: UIControlState.normal)
+//            dataArray?.insert(dataStr, at: 2)
             break
             
         case 13:
             
             let btn = bankView.viewWithTag(13) as! UIButton
             btn.setImage(image, for: UIControlState.normal)
+//            dataArray?.insert(dataStr, at: 3)
             break
             
         default:

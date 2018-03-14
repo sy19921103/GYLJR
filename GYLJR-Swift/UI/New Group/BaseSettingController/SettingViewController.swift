@@ -109,6 +109,7 @@ class SettingViewController: BaseViewController {
         
         //修改密码
         let pwdBgBtn = UIButton(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 132, width: 375, height: 65))
+        pwdBgBtn.addTarget(self, action: #selector(jumpToResetPwdView), for: UIControlEvents.touchUpInside)
         pwdBgBtn.backgroundColor = kWhiteColor
         view.addSubview(pwdBgBtn)
 
@@ -139,6 +140,12 @@ class SettingViewController: BaseViewController {
     @objc func handCompanyMeterialClick() {
         
         let vc = CompanyGeneralViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func jumpToResetPwdView() {
+        
+        let vc = ResetPwdViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 

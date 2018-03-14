@@ -27,6 +27,7 @@ class CompanyGeneralViewController: BaseViewController, UITableViewDelegate, UIT
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = kBgColor
+        tableView.rowHeight = 70*kScreenScale
         view.addSubview(tableView)
         
         let headerView = UIView.init(frame: ShiPei.CGRectMakeScaleWith(x: 0, y: 0, width: 375, height: 15))
@@ -49,17 +50,42 @@ class CompanyGeneralViewController: BaseViewController, UITableViewDelegate, UIT
     
     @objc func nextStepClick() {
         
-        let vc = CompanyMaterialViewController()
-        navigationController?.pushViewController(vc, animated: true)
         
-        if checkInputInfo() != nil {
-            
-            createTipAlertViewWith(checkInputInfo()!)
-            
-        }else{
-            
-            
-        }
+//        if checkInputInfo() != nil {
+//            
+//            createTipAlertViewWith(checkInputInfo()!)
+//            
+//        }else{
+//            
+//            kUserModel.updateUserInfoWith(userId: ApiManager.shared.loginInfo!.id,
+//                                          companyName: companyInfoArray[0],
+//                                          legalPerson: companyInfoArray[1],
+//                                          yyzzCode: companyInfoArray[2],
+//                                          jgxyCode: companyInfoArray[3],
+//                                          khxkCode: companyInfoArray[4],
+//                                          bankName: companyInfoArray[5],
+//                                          bankCard: companyInfoArray[6],
+//                                          modelCompletionBlock: { (dataResult) in
+//                                            
+//                                            if dataResult.code == 0 {
+//                                                
+//                                                TipView.shared().message = "上传成功"
+//                                                Thread.sleep(forTimeInterval: 1)
+//
+//                                                let vc = CompanyMaterialViewController()
+//                                                self.navigationController?.pushViewController(vc, animated: true)
+//                                                
+//                                            }else {
+//                                                TipView.shared().message = dataResult.message
+//                                            }
+//            },
+//                                          modelFailBlock: { (error) in
+//                                            
+//            })
+//        }
+        
+        let vc = CompanyMaterialViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -103,11 +129,6 @@ class CompanyGeneralViewController: BaseViewController, UITableViewDelegate, UIT
         cell?.companyTF.delegate = self
         cell?.companyTF.tag = indexPath.row
         return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 70*kScreenScale
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {

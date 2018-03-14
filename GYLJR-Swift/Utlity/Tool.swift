@@ -45,13 +45,13 @@ class Tool: NSObject {
         return btn
     }
     
-    static func createTextFieldWith(placeHolder: String?, target:UITextFieldDelegate?, isSecurity: Bool) ->UITextField {
+    static func createTextFieldWith(placeHolder: String?, target:UITextFieldDelegate?, isSecurity: Bool, leftWidth: CGFloat) ->UITextField {
         
         let textField = UITextField()
         textField.placeholder = placeHolder ?? ""
         textField.delegate = target
         textField.isSecureTextEntry = isSecurity
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10*kScreenScale, height: 0))
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: leftWidth*kScreenScale, height: 0))
         textField.leftView?.backgroundColor = kWhiteColor
         textField.leftViewMode = UITextFieldViewMode.always
         textField.borderStyle = UITextBorderStyle.none

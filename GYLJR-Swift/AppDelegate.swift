@@ -26,9 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         //控制点击背景是否收起键盘
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
-        //控制键盘上的工具条文字颜色是否用户自定义
-        IQKeyboardManager.sharedManager().shouldShowTextFieldPlaceholder = true
-        //       IQKeyboardManager.sharedManager().shouldToolbarUsesTextFieldTintColor = true
         //将右边Done改成完成
         IQKeyboardManager.sharedManager().toolbarDoneBarButtonItemText = "完成"
         // 控制是否显示键盘上的工具条

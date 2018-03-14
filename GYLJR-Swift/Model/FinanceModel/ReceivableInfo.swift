@@ -8,6 +8,13 @@
 
 import UIKit
 
-class ReceivableInfo: BaseModel {
-
+class ReceivableInfo: ResponseInfo {
+    
+    var apply_id: String!
+    var pay_person: String!
+    var bill_num: String!
+    var bill_money: String!
+    var add_time: String?
+    var total_must_money: String?
+    var deadline_date: String?
 }

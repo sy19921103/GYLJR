@@ -42,7 +42,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         userline1.backgroundColor = kLineColor
         userView.addSubview(userline1)
         
-        userTF = Tool.createTextFieldWith(placeHolder: "用户名/手机号", target: self, isSecurity: false)
+        userTF = Tool.createTextFieldWith(placeHolder: "用户名/手机号", target: self, isSecurity: false, leftWidth: 10)
         userTF.frame = ShiPei.CGRectMakeScaleWith(x: 60, y: 15, width: 250, height: 35)
         userView.addSubview(userTF)
         
@@ -62,7 +62,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         pwdline1.backgroundColor = kLineColor
         pwdView.addSubview(pwdline1)
         
-        pwdTF = Tool.createTextFieldWith(placeHolder: "密码", target: self, isSecurity: true)
+        pwdTF = Tool.createTextFieldWith(placeHolder: "密码", target: self, isSecurity: true, leftWidth: 10)
         pwdTF.frame = ShiPei.CGRectMakeScaleWith(x: 60, y: 15, width: 250, height: 35)
         pwdView.addSubview(pwdTF)
         

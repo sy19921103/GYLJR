@@ -46,6 +46,12 @@ class PhotoWayView: UIView {
         
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
+    
+    
     func initContentView() -> UIView {
         
         let contentView = UIView()
@@ -105,14 +111,8 @@ class PhotoWayView: UIView {
         return contentView
     }
     
-    @objc func itemClick(_ sender: UIButton) {
-        
-        dismiss()
-
-        photoWayBlock(sender.info as! WayType)
-        
-    }
     
+    //MARK: Public
     func show() {
         
         UIApplication.shared.keyWindow?.addSubview(self)
@@ -125,15 +125,21 @@ class PhotoWayView: UIView {
         }
     }
     
+    
+    //MARK: IBAction
+    @objc func itemClick(_ sender: UIButton) {
+        
+        dismiss()
+        
+        photoWayBlock(sender.info as! WayType)
+        
+    }
+    
     @objc func dismiss() {
         
         self.removeFromSuperview()
         self.contentView.removeFromSuperview()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        
-        super.init(coder: aDecoder)
-    }
+
     
 }

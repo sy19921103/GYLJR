@@ -53,7 +53,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         userTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
         userView.addSubview(userTitleLabel)
         
-        userTF = Tool.createTextFieldWith(placeHolder: "您的账户名或登录名", target: self, isSecurity: false)
+        userTF = Tool.createTextFieldWith(placeHolder: "您的账户名或登录名", target: self, isSecurity: false, leftWidth: 10)
         userTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
         userView.addSubview(userTF)
         
@@ -75,7 +75,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         pwdTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
         pwdView.addSubview(pwdTitleLabel)
         
-        pwdTF = Tool.createTextFieldWith(placeHolder: "建议至少使用两种字符组合", target: self, isSecurity: true)
+        pwdTF = Tool.createTextFieldWith(placeHolder: "建议至少使用两种字符组合", target: self, isSecurity: true, leftWidth: 10)
         pwdTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
         pwdView.addSubview(pwdTF)
         
@@ -97,7 +97,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         againPwdTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
         againPwdView.addSubview(againPwdTitleLabel)
         
-        againPwdTF = Tool.createTextFieldWith(placeHolder: "请再次输入密码", target: self, isSecurity: true)
+        againPwdTF = Tool.createTextFieldWith(placeHolder: "请再次输入密码", target: self, isSecurity: true, leftWidth: 10)
         againPwdTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
         againPwdView.addSubview(againPwdTF)
         
@@ -119,7 +119,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         mobileTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
         mobileView.addSubview(mobileTitleLabel)
         
-        mobileTF = Tool.createTextFieldWith(placeHolder: "建议使用常用手机", target: self, isSecurity: false)
+        mobileTF = Tool.createTextFieldWith(placeHolder: "建议使用常用手机", target: self, isSecurity: false, leftWidth: 10)
         mobileTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
         mobileView.addSubview(mobileTF)
         
@@ -141,7 +141,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
 //        codeTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
 //        codeView.addSubview(codeTitleLabel)
 //
-//        codeTF = Tool.createTextFieldWith(placeHolder: "请输入验证码", target: self, isSecurity: false)
+//        codeTF = Tool.createTextFieldWith(placeHolder: "请输入验证码", target: self, isSecurity: false, leftWidth: 10)
 //        codeTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
 //        codeView.addSubview(codeTF)
 //
@@ -163,7 +163,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
 //        mobileCodeTitleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 15, y: 20, width: 100, height: 20)
 //        mobileCodeView.addSubview(mobileCodeTitleLabel)
 //
-//        mobileCodeTF = Tool.createTextFieldWith(placeHolder: "请输入手机验证码", target: self, isSecurity: false)
+//        mobileCodeTF = Tool.createTextFieldWith(placeHolder: "请输入手机验证码", target: self, isSecurity: false, leftWidth: 10)
 //        mobileCodeTF.frame = ShiPei.CGRectMakeScaleWith(x: 100, y: 15, width: 250, height: 30)
 //        mobileCodeView.addSubview(mobileCodeTF)
 //
@@ -222,7 +222,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
             createTipAlertViewWith(result!)
         }else {
             
-            kUserModel.registerBy(mobile: mobileTF.text!, password: pwdTF.text!.md5Encodeing(), companyName: "11111111", modelCompletionBlock: { [unowned self] (dataResult) in
+            kUserModel.registerBy(mobile: mobileTF.text!, password: pwdTF.text!.md5Encodeing(), companyName: userTF.text!, modelCompletionBlock: { [unowned self] (dataResult) in
                 
                 if dataResult.code == 0 {
                     self.createTipAlertViewWith("注册成功！")
@@ -255,10 +255,12 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate, UITextVie
         
         if sender.isSelected {
             sender.setBackgroundImage(UIImage(named: "register_unselect") , for: UIControlState.normal)
+            sender.isSelected = false
             registerBtn.isUserInteractionEnabled = false;
             registerBtn.backgroundColor = UIColor.gray
         }else{
             sender.setBackgroundImage(UIImage(named: "register_select") , for: UIControlState.normal)
+            sender.isSelected = true
             registerBtn.isUserInteractionEnabled = true;
             registerBtn.backgroundColor = kGoldColor
         }

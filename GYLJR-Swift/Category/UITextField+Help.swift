@@ -8,6 +8,22 @@
 
 import UIKit
 
-class UITextField_Help: NSObject {
-
+extension UITextField {
+ 
+    func addTopLine()  {
+        
+        let topView = UIView(frame: bounds)
+        topView.backgroundColor = kLineColor
+        topView.setHeight(1*kScreenScale)
+        addSubview(topView)
+    }
+    
+    func addBottomLine() {
+        
+        let bottomView = UIView(frame: bounds)
+        bottomView.backgroundColor = kLineColor
+        bottomView.setHeight(1*kScreenScale)
+        bottomView.setY(frame.size.height-1*kScreenScale)
+        addSubview(bottomView)
+    }
 }

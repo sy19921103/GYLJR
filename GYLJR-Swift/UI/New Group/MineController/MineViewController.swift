@@ -16,16 +16,9 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     var sectionStateArray: Array<String> = ["close","close","close","close"]
     let rowArray: Array<Array<String>?> = [nil,nil,["借款管理","新建借款申请"],["已放款未结清的借款","已结清的借款"]]
     
-    
-    func checkLoginInfo() {
-        
-//        if(ApiManager.shared.loginInfo == nil){
-        
-            let loginVC = LoginViewController()
-            navigationController?.pushViewController(loginVC, animated: false)
-//        }else{
-//            
-//        }
+    //MARK:LifeCircle
+    deinit {
+        ApiManager.shared.loginInfo?.removeObserver(self, forKeyPath: loginNameKey)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,8 +38,20 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         ApiManager.shared.loginInfo?.addObserver(self, forKeyPath: loginNameKey, options: NSKeyValueObservingOptions.new, context: nil)
     }
     
+    func checkLoginInfo() {
+        
+        if(ApiManager.shared.loginInfo == nil){
+            
+            let loginVC = LoginViewController()
+            navigationController?.pushViewController(loginVC, animated: false)
+            
+        }else{
+            
+        }
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        CLog(11111)
+        
         checkLoginInfo()
     }
     
@@ -73,9 +78,13 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         titleLabel.frame = ShiPei.CGRectMakeScaleWith(x: 0, y: 50, width: 375, height: 25)
         headerBgIV.addSubview(titleLabel)
         
-        userLabel = Tool.createLabelWith(title: "欢迎！<账户名>", textColor: kWhiteColor, bgColor: nil, textFont: 18, textAlignment: NSTextAlignment.center, isFitFont: true)
+        userLabel = Tool.createLabelWith(title: "欢迎！", textColor: kWhiteColor, bgColor: nil, textFont: 18, textAlignment: NSTextAlignment.center, isFitFont: true)
         userLabel.frame = ShiPei.CGRectMakeScaleWith(x: 0, y: 110, width: 375, height: 20)
         headerBgIV.addSubview(userLabel)
+        
+        if ApiManager.shared.loginInfo != nil {
+            userLabel.text = "欢迎！"+ApiManager.shared.loginInfo!.co_name
+        }
         
         let applyBtn = UIButton()
         applyBtn.setBackgroundImage(UIImage(named: "mine_apply"), for: UIControlState.normal)
@@ -92,7 +101,7 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc func applyMoneyClick() {
-        CLog("apply")
+        
         kUserModel.loginBy(mobile: "11111", password: "111111", modelCompletionBlock: { (dataResult) in
             
             
@@ -102,6 +111,11 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     
+    //MARK:tableViewDelegate
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionArray.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if rowArray[section] != nil {
             if sectionStateArray[section] != "close" {
@@ -110,10 +124,6 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             return 0
         }
         return 0
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionArray.count
     }
     
 
@@ -191,10 +201,6 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 
             }
         }
-    }
-    
-    deinit {
-        ApiManager.shared.loginInfo?.removeObserver(self, forKeyPath: loginNameKey)
     }
 
 }

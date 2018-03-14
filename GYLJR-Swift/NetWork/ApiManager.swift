@@ -14,8 +14,11 @@ class ApiManager: NSObject {
     
     static let shared = ApiManager()
     
-    let registerApi = "/co_user/info/register"
-    let loginApi = "/co_user/info/login"
+    let registerApi     = "/co_user/info/register"
+    let loginApi        = "/co_user/info/login"
+    let resetPwdApi     = "/co_user/info/resetPwd"
+    let updateInfoApi   = "/co_user/info/updateCompUser"
+    
     var loginInfo :LoginInfo? {
         
         didSet {
@@ -24,7 +27,7 @@ class ApiManager: NSObject {
     }
 
     private override init() {
-     
+        
         loginInfo = Utlity.readFromSandboxWith(loginNameKey) as? LoginInfo
     }
     

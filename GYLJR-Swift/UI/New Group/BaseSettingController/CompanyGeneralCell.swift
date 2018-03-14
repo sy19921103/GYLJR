@@ -16,7 +16,7 @@ class CompanyGeneralCell: BaseCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        companyTF = Tool.createTextFieldWith(placeHolder: nil, target: nil, isSecurity: false)
+        companyTF = Tool.createTextFieldWith(placeHolder: nil, target: nil, isSecurity: false, leftWidth: 10)
         companyTF.frame = ShiPei.CGRectMakeScaleWith(x: 10, y: 15, width: 330, height: 40)
         contentView.addSubview(companyTF)
         
